@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Training artefacts
+*.log
+deep_dialog/checkpoints/*.pkl
+
+# Keep the performance-records JSON so plots/results are reproducible
+!deep_dialog/checkpoints/agt_9_performance_records.json

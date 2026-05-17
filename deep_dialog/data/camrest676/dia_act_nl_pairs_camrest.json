@@ -1,0 +1,517 @@
+{
+  "dia_acts": {
+    "inform": [
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "area"
+        ],
+        "nl": {
+          "agt": "It is in the $area$ area.",
+          "usr": "I want a restaurant in the $area$ area."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "food"
+        ],
+        "nl": {
+          "agt": "It serves $food$ food.",
+          "usr": "I'd like $food$ food."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "pricerange"
+        ],
+        "nl": {
+          "agt": "It is $pricerange$.",
+          "usr": "I want a $pricerange$ restaurant."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name"
+        ],
+        "nl": {
+          "agt": "$name$ is a great choice.",
+          "usr": "I am looking for $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "phone"
+        ],
+        "nl": {
+          "agt": "The phone number is $phone$.",
+          "usr": "I want to know the phone number."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "address"
+        ],
+        "nl": {
+          "agt": "The address is $address$.",
+          "usr": "I want to know the address."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "postcode"
+        ],
+        "nl": {
+          "agt": "The postcode is $postcode$.",
+          "usr": "I want the postcode."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "taskcomplete"
+        ],
+        "nl": {
+          "agt": "I have found a matching restaurant for you.",
+          "usr": "Thanks, that works for me."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name"
+        ],
+        "nl": {
+          "agt": "I recommend $name$.",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name",
+          "phone"
+        ],
+        "nl": {
+          "agt": "I recommend $name$ (phone: $phone$).",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name",
+          "address"
+        ],
+        "nl": {
+          "agt": "I recommend $name$ (address: $address$).",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name",
+          "postcode"
+        ],
+        "nl": {
+          "agt": "I recommend $name$ (postcode: $postcode$).",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name",
+          "phone",
+          "address"
+        ],
+        "nl": {
+          "agt": "I recommend $name$ (phone: $phone$, address: $address$).",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name",
+          "phone",
+          "postcode"
+        ],
+        "nl": {
+          "agt": "I recommend $name$ (phone: $phone$, postcode: $postcode$).",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name",
+          "address",
+          "postcode"
+        ],
+        "nl": {
+          "agt": "I recommend $name$ (address: $address$, postcode: $postcode$).",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "name",
+          "phone",
+          "address",
+          "postcode"
+        ],
+        "nl": {
+          "agt": "I recommend $name$ (phone: $phone$, address: $address$, postcode: $postcode$).",
+          "usr": "I am interested in $name$."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "area",
+          "food"
+        ],
+        "nl": {
+          "agt": "It is $area$ and $food$.",
+          "usr": "I want a $area$ $food$ restaurant."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "area",
+          "pricerange"
+        ],
+        "nl": {
+          "agt": "It is $area$ and $pricerange$.",
+          "usr": "I want a $area$ $pricerange$ restaurant."
+        }
+      },
+      {
+        "request_slots": [],
+        "inform_slots": [
+          "food",
+          "pricerange"
+        ],
+        "nl": {
+          "agt": "It is $food$ and $pricerange$.",
+          "usr": "I want a $food$ $pricerange$ restaurant."
+        }
+      }
+    ],
+    "request": [
+      {
+        "request_slots": [
+          "area"
+        ],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Which area would you prefer?",
+          "usr": "What area is it in?"
+        }
+      },
+      {
+        "request_slots": [
+          "food"
+        ],
+        "inform_slots": [],
+        "nl": {
+          "agt": "What kind of food would you like?",
+          "usr": "What type of food does it serve?"
+        }
+      },
+      {
+        "request_slots": [
+          "pricerange"
+        ],
+        "inform_slots": [],
+        "nl": {
+          "agt": "What price range are you looking for?",
+          "usr": "What is the price range?"
+        }
+      },
+      {
+        "request_slots": [
+          "name"
+        ],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Is there a specific restaurant you have in mind?",
+          "usr": "What is the name of the restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "phone"
+        ],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Do you need the phone number?",
+          "usr": "Can I have the phone number?"
+        }
+      },
+      {
+        "request_slots": [
+          "address"
+        ],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Do you need the address?",
+          "usr": "Can I have the address?"
+        }
+      },
+      {
+        "request_slots": [
+          "postcode"
+        ],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Do you need the postcode?",
+          "usr": "Can I have the postcode?"
+        }
+      },
+      {
+        "request_slots": [
+          "name"
+        ],
+        "inform_slots": [
+          "area"
+        ],
+        "nl": {
+          "agt": "What $name$ for the $area$ restaurant?",
+          "usr": "Can I get the $name$ for the $area$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "name"
+        ],
+        "inform_slots": [
+          "food"
+        ],
+        "nl": {
+          "agt": "What $name$ for the $food$ restaurant?",
+          "usr": "Can I get the $name$ for the $food$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "name"
+        ],
+        "inform_slots": [
+          "pricerange"
+        ],
+        "nl": {
+          "agt": "What $name$ for the $pricerange$ restaurant?",
+          "usr": "Can I get the $name$ for the $pricerange$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "phone"
+        ],
+        "inform_slots": [
+          "area"
+        ],
+        "nl": {
+          "agt": "What $phone$ for the $area$ restaurant?",
+          "usr": "Can I get the $phone$ for the $area$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "phone"
+        ],
+        "inform_slots": [
+          "food"
+        ],
+        "nl": {
+          "agt": "What $phone$ for the $food$ restaurant?",
+          "usr": "Can I get the $phone$ for the $food$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "phone"
+        ],
+        "inform_slots": [
+          "pricerange"
+        ],
+        "nl": {
+          "agt": "What $phone$ for the $pricerange$ restaurant?",
+          "usr": "Can I get the $phone$ for the $pricerange$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "address"
+        ],
+        "inform_slots": [
+          "area"
+        ],
+        "nl": {
+          "agt": "What $address$ for the $area$ restaurant?",
+          "usr": "Can I get the $address$ for the $area$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "address"
+        ],
+        "inform_slots": [
+          "food"
+        ],
+        "nl": {
+          "agt": "What $address$ for the $food$ restaurant?",
+          "usr": "Can I get the $address$ for the $food$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "address"
+        ],
+        "inform_slots": [
+          "pricerange"
+        ],
+        "nl": {
+          "agt": "What $address$ for the $pricerange$ restaurant?",
+          "usr": "Can I get the $address$ for the $pricerange$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "postcode"
+        ],
+        "inform_slots": [
+          "area"
+        ],
+        "nl": {
+          "agt": "What $postcode$ for the $area$ restaurant?",
+          "usr": "Can I get the $postcode$ for the $area$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "postcode"
+        ],
+        "inform_slots": [
+          "food"
+        ],
+        "nl": {
+          "agt": "What $postcode$ for the $food$ restaurant?",
+          "usr": "Can I get the $postcode$ for the $food$ restaurant?"
+        }
+      },
+      {
+        "request_slots": [
+          "postcode"
+        ],
+        "inform_slots": [
+          "pricerange"
+        ],
+        "nl": {
+          "agt": "What $postcode$ for the $pricerange$ restaurant?",
+          "usr": "Can I get the $postcode$ for the $pricerange$ restaurant?"
+        }
+      }
+    ],
+    "confirm_question": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Could you confirm your request?",
+          "usr": "Are you sure?"
+        }
+      }
+    ],
+    "confirm_answer": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Yes, confirmed.",
+          "usr": "Yes, that's right."
+        }
+      }
+    ],
+    "thanks": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "You're welcome!",
+          "usr": "Thank you, goodbye."
+        }
+      }
+    ],
+    "closing": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Goodbye.",
+          "usr": "Goodbye."
+        }
+      }
+    ],
+    "deny": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Sorry, that is not correct.",
+          "usr": "No, that is not what I want."
+        }
+      }
+    ],
+    "welcome": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Welcome!",
+          "usr": "Hi."
+        }
+      }
+    ],
+    "multiple_choice": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Which one would you like?",
+          "usr": "Either is fine."
+        }
+      }
+    ],
+    "greeting": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "Hello, how can I help you?",
+          "usr": "Hello."
+        }
+      }
+    ],
+    "not_sure": [
+      {
+        "request_slots": [],
+        "inform_slots": [],
+        "nl": {
+          "agt": "I'm not sure.",
+          "usr": "I'm not sure."
+        }
+      }
+    ]
+  }
+}
