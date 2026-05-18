@@ -49,6 +49,7 @@ class AgentDQN(Agent):
         self.optimizer = optim.RMSprop(self.dqn.parameters(), lr=1e-3)
 
         self.cur_bellman_err = 0
+        self.last_avg_bellman_loss = 0.0
 
         # Prediction Mode: load trained DQN model
         if params['trained_model_path'] != None:
@@ -263,6 +264,7 @@ class AgentDQN(Agent):
         self.running_expereince_pool = list(self.experience_replay_pool) + list(self.experience_replay_pool_from_model)
 
         if len(self.running_expereince_pool) == 0:
+            self.last_avg_bellman_loss = 0.0
             return
 
         for iter_batch in range(num_batches):
@@ -289,6 +291,12 @@ class AgentDQN(Agent):
                         float(self.cur_bellman_err) / denom,
                         len(self.experience_replay_pool), len(self.experience_replay_pool_from_model),
                         self.cur_bellman_err_planning))
+
+        inner = len(self.running_expereince_pool) // batch_size
+        total_updates = num_batches * inner
+        self.last_avg_bellman_loss = (
+            self.cur_bellman_err / total_updates if total_updates > 0 else 0.0
+        )
 
     # def train_one_iter(self, batch_size=1, num_batches=100, planning=False):
     #     """ Train DQN with experience replay """

@@ -18,9 +18,15 @@ import json
 import os
 import pickle
 import random
+from datetime import datetime
 
 import numpy
 import torch
+
+try:
+    from torch.utils.tensorboard import SummaryWriter
+except ImportError:  # optional: pip install tensorboard
+    SummaryWriter = None
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) or './')
 
@@ -88,6 +94,10 @@ def main():
     parser.add_argument('--trained_model_path', type=str, default=None)
     parser.add_argument('-o', '--write_model_dir', type=str, default='./deep_dialog/checkpoints/')
     parser.add_argument('--save_check_point', type=int, default=10)
+    parser.add_argument('--tensorboard', type=int, default=0,
+                        help='1 to log scalars to TensorBoard (pip install tensorboard)')
+    parser.add_argument('--tensorboard_dir', type=str, default='',
+                        help='TensorBoard root log dir; default <write_model_dir>/tensorboard')
     parser.add_argument('--success_rate_threshold', type=float, default=0.6)
     parser.add_argument('--split_fold', type=int, default=5)
     parser.add_argument('--learning_phase', type=str, default='all')
@@ -96,6 +106,19 @@ def main():
     parser.add_argument('--train_world_model', type=int, default=1)
     parser.add_argument('--seed', type=int, default=5)
     parser.add_argument('--torch_seed', type=int, default=100)
+    parser.add_argument(
+        '--sample_dialog_seed',
+        type=int,
+        default=424242,
+        help='DQN only: RNG seed for the sample before/after dialogue. '
+             'Use a non-negative integer for a fixed scenario, or -1 to draw a random seed once per run.',
+    )
+    parser.add_argument(
+        '--eval_baseline_episodes',
+        type=int,
+        default=50,
+        help='DQN only: number of eval dialogs for before/after RL metrics (metrics_ab).',
+    )
 
     # Optional: only set these if you want to reuse the pretrained movie LSTM
     # models. Leave empty for the template-only fallback (the default).
@@ -235,7 +258,67 @@ def main():
     best_model = {'model': copy.deepcopy(agent)}
     best_res = {'success_rate': 0, 'ave_reward': float('-inf'),
                 'ave_turns': float('inf'), 'epoch': 0}
-    performance_records = {'success_rate': {}, 'ave_turns': {}, 'ave_reward': {}}
+    performance_records = {
+        'success_rate': {},
+        'ave_turns': {},
+        'ave_reward': {},
+        'bellman_loss': {},
+        'eval_dialog_turns': {},
+    }
+    _sds = int(params['sample_dialog_seed'])
+    if _sds < 0:
+        sample_dialog_rng_seed = random.randint(0, 2**31 - 1)
+        print('Sample dialogue: random RNG seed = %s (truyền --sample_dialog_seed %s để tái tạo)'
+              % (sample_dialog_rng_seed, sample_dialog_rng_seed))
+    else:
+        sample_dialog_rng_seed = _sds
+    sample_dialog_ab_state = {'before': None, 'seed': sample_dialog_rng_seed}
+
+    def rollout_predict_transcript(dialog_manager, policy_agent, rng_seed):
+        """
+        Run one real-user-sim episode in predict mode with fixed RNG so the same
+        user goal / stochastic user choices repeat across policy snapshots.
+        """
+        prev_agent = dialog_manager.agent
+        try:
+            numpy.random.seed(rng_seed)
+            random.seed(rng_seed)
+            torch.manual_seed(params['torch_seed'])
+            dialog_manager.agent = policy_agent
+            policy_agent.predict_mode = True
+            dialog_manager.initialize_episode(True)
+            goal = copy.deepcopy(dialog_manager.user.goal)
+            episode_over = False
+            reward = 0.0
+            while not episode_over:
+                episode_over, reward = dialog_manager.next_turn(
+                    record_training_data=False,
+                    record_training_data_for_user=False,
+                )
+            hist = dialog_manager.state_tracker.dialog_history_dictionaries()
+            from compare_sample_dialog import (
+                format_outcome_footer,
+                format_turns_as_conversation,
+            )
+            nlg_model = policy_agent.nlg_model
+            body = format_turns_as_conversation(goal, hist, nlg_model)
+            footer = format_outcome_footer(
+                reward,
+                dialog_manager.state_tracker.turn_count,
+                reward > 0,
+            )
+            return {
+                'conversation': body + '\n\n' + footer,
+                'goal': goal,
+                'turns': copy.deepcopy(hist),
+                'outcome': {
+                    'reward': reward,
+                    'turn_count': int(dialog_manager.state_tracker.turn_count),
+                    'success': bool(reward > 0),
+                },
+            }
+        finally:
+            dialog_manager.agent = prev_agent
 
     def save_model(path, agt, success_rate, agent, best_epoch, cur_epoch):
         filename = f'agt_{agt}_{best_epoch}_{cur_epoch}_{success_rate:.5f}.pkl'
@@ -249,8 +332,8 @@ def main():
     def save_performance_records(path, agt, records):
         filepath = os.path.join(path, f'agt_{agt}_performance_records.json')
         try:
-            with open(filepath, 'w') as f:
-                json.dump(records, f)
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(records, f, ensure_ascii=False, indent=2)
             print(f'saved records in {filepath}')
         except Exception as e:
             print(f'Error writing records {filepath}: {e}')
@@ -259,7 +342,8 @@ def main():
         successes = 0
         cumulative_reward = 0
         cumulative_turns = 0
-        for episode in range(n):
+        dialog_turns = []
+        for _ in range(n):
             dialog_manager.initialize_episode(use_environment=True)
             episode_over = False
             while not episode_over:
@@ -268,12 +352,34 @@ def main():
                 if episode_over:
                     if reward > 0:
                         successes += 1
-                    cumulative_turns += dialog_manager.state_tracker.turn_count
+                    tc = int(dialog_manager.state_tracker.turn_count)
+                    cumulative_turns += tc
+                    dialog_turns.append(tc)
         return {
             'success_rate': successes / n,
             'ave_reward': cumulative_reward / n,
             'ave_turns': cumulative_turns / n,
+            'dialog_turns': dialog_turns,
         }
+
+    def metrics_summary(sim_res):
+        return {
+            'success_rate': sim_res['success_rate'],
+            'ave_turns': sim_res['ave_turns'],
+            'ave_reward': sim_res['ave_reward'],
+        }
+
+    def evaluate_policy(policy_agent, n_episodes):
+        """Evaluate policy in predict mode without recording training data."""
+        prev_agent = dialog_manager.agent
+        prev_predict = policy_agent.predict_mode
+        try:
+            dialog_manager.agent = policy_agent
+            policy_agent.predict_mode = True
+            return simulation_epoch(n_episodes)
+        finally:
+            policy_agent.predict_mode = prev_predict
+            dialog_manager.agent = prev_agent
 
     def simulation_epoch_for_training(n, grounded_for_model=False):
         for episode in range(n):
@@ -283,7 +389,7 @@ def main():
             while not episode_over:
                 episode_over, reward = dialog_manager.next_turn()
 
-    def warm_start_simulation():
+    def warm_start_simulation(tb_writer=None):
         successes = 0
         cumulative_reward = 0
         cumulative_turns = 0
@@ -307,6 +413,13 @@ def main():
               f"{cumulative_reward / warm_start_epochs}, ave turns "
               f"{cumulative_turns / warm_start_epochs}")
         print(f"Current experience replay buffer size {len(agent.experience_replay_pool)}")
+        if tb_writer is not None:
+            n = float(warm_start_epochs)
+            tb_writer.add_scalar('warm_start/success_rate', successes / n, 0)
+            tb_writer.add_scalar('warm_start/ave_reward', cumulative_reward / n, 0)
+            tb_writer.add_scalar('warm_start/ave_turns', cumulative_turns / n, 0)
+            tb_writer.add_scalar('warm_start/replay_buffer_size', len(agent.experience_replay_pool), 0)
+            tb_writer.flush()
 
     def run_episodes(count, status):
         successes = 0
@@ -314,11 +427,41 @@ def main():
         cumulative_turns = 0
         grounded_for_model = params['grounded']
         sim_eps = planning_steps + 1
+        n_eval_train = params['simulation_epoch_size']
+        n_eval_ab = params['eval_baseline_episodes']
+        metrics_ab_state = {}
+
+        tb_writer = None
+        if params.get('tensorboard') and agt == 9 and params['trained_model_path'] is None:
+            if SummaryWriter is None:
+                print('TensorBoard disabled: install package with  pip install tensorboard')
+            else:
+                tb_root = (params.get('tensorboard_dir') or '').strip()
+                if not tb_root:
+                    tb_root = os.path.join(params['write_model_dir'], 'tensorboard')
+                run_name = datetime.now().strftime('run_%Y%m%d_%H%M%S')
+                log_dir = os.path.join(tb_root, run_name)
+                os.makedirs(log_dir, exist_ok=True)
+                tb_writer = SummaryWriter(log_dir=log_dir)
+                print(f'TensorBoard log dir: {log_dir}')
+                print(f'Start viewer: tensorboard --logdir "{tb_root}"')
 
         if agt == 9 and params['trained_model_path'] is None and warm_start == 1:
             print('warm_start starting ...')
-            warm_start_simulation()
+            warm_start_simulation(tb_writer)
             print('warm_start finished, start RL training ...')
+
+        if agt == 9 and params['trained_model_path'] is None:
+            print('Baseline metrics (before RL, %d dialogs) ...' % n_eval_ab)
+            before_sim = evaluate_policy(copy.deepcopy(agent), n_eval_ab)
+            metrics_ab_state = {
+                'eval_episodes': n_eval_ab,
+                'before_rl': metrics_summary(before_sim),
+            }
+            print('Recording sample dialog (before RL) for before/after comparison ...')
+            sample_dialog_ab_state['before'] = rollout_predict_transcript(
+                dialog_manager, copy.deepcopy(agent), sample_dialog_ab_state['seed'],
+            )
 
         for episode in range(count):
             print(f"Episode: {episode}")
@@ -341,11 +484,12 @@ def main():
 
                 agent.predict_mode = False
                 world_model.predict_mode = False
-                sim_res = simulation_epoch(50)
+                sim_res = simulation_epoch(n_eval_train)
 
                 performance_records['success_rate'][episode] = sim_res['success_rate']
                 performance_records['ave_turns'][episode] = sim_res['ave_turns']
                 performance_records['ave_reward'][episode] = sim_res['ave_reward']
+                performance_records['eval_dialog_turns'][episode] = sim_res['dialog_turns']
 
                 if sim_res['success_rate'] >= best_res['success_rate']:
                     if sim_res['success_rate'] >= success_rate_threshold:
@@ -360,8 +504,30 @@ def main():
 
                 agent.train(batch_size, 1)
                 agent.reset_dqn_target()
+                performance_records['bellman_loss'][episode] = getattr(
+                    agent, 'last_avg_bellman_loss', 0.0
+                )
+
                 if params['train_world_model']:
                     world_model.train(batch_size, 1)
+
+                if tb_writer is not None:
+                    step = episode
+                    tb_writer.add_scalar('simulation/success_rate', sim_res['success_rate'], step)
+                    tb_writer.add_scalar('simulation/ave_turns', sim_res['ave_turns'], step)
+                    tb_writer.add_scalar('simulation/ave_reward', sim_res['ave_reward'], step)
+                    tb_writer.add_scalar('dqn/bellman_loss', performance_records['bellman_loss'][episode], step)
+                    tb_writer.add_scalar('rollout/running_success_rate', successes / (episode + 1), step)
+                    tb_writer.add_scalar('rollout/running_avg_reward', cumulative_reward / (episode + 1), step)
+                    tb_writer.add_scalar('rollout/running_avg_turns', cumulative_turns / (episode + 1), step)
+                    tb_writer.add_scalar('buffer/replay_real_env', len(agent.experience_replay_pool), step)
+                    tb_writer.add_scalar('buffer/replay_world_model', len(agent.experience_replay_pool_from_model), step)
+                    if params['train_world_model']:
+                        te = len(world_model.training_examples)
+                        denom = max(1.0, float(te) / float(batch_size))
+                        wm_avg = float(world_model.total_loss) / denom if te > 0 else 0.0
+                        tb_writer.add_scalar('world_model/train_loss', wm_avg, step)
+                    tb_writer.flush()
 
                 if episode % save_check_point == 0:
                     save_model(params['write_model_dir'], agt, best_res['success_rate'],
@@ -379,9 +545,64 @@ def main():
         status['count'] += count
 
         if agt == 9 and params['trained_model_path'] is None:
+            if metrics_ab_state.get('before_rl') is not None:
+                try:
+                    print('Metrics after RL (best policy, %d dialogs) ...' % n_eval_ab)
+                    after_sim = evaluate_policy(best_model['model'], n_eval_ab)
+                    before_m = metrics_ab_state['before_rl']
+                    after_m = metrics_summary(after_sim)
+                    performance_records['metrics_ab'] = {
+                        'eval_episodes': metrics_ab_state['eval_episodes'],
+                        'before_rl': before_m,
+                        'after_best_policy': {
+                            **after_m,
+                            'best_rl_epoch': int(best_res['epoch']),
+                        },
+                        'delta': {
+                            'success_rate': after_m['success_rate'] - before_m['success_rate'],
+                            'ave_turns': after_m['ave_turns'] - before_m['ave_turns'],
+                            'ave_reward': after_m['ave_reward'] - before_m['ave_reward'],
+                        },
+                    }
+                    print('=== Metrics before / after RL ===')
+                    for key, label in (
+                        ('success_rate', 'Success rate'),
+                        ('ave_turns', 'Avg turns'),
+                        ('ave_reward', 'Avg reward'),
+                    ):
+                        b, a = before_m[key], after_m[key]
+                        print('  %s: %.4f -> %.4f (delta %+.4f)' % (label, b, a, a - b))
+                    print('Saved metrics_ab to performance_records.')
+                except Exception as e:
+                    print('Could not save metrics_ab: %s' % e)
+            if sample_dialog_ab_state['before'] is not None:
+                try:
+                    before_rec = sample_dialog_ab_state['before']
+                    after_rec = rollout_predict_transcript(
+                        dialog_manager,
+                        best_model['model'],
+                        sample_dialog_ab_state['seed'],
+                    )
+                    performance_records['sample_dialog_ab'] = {
+                        'rng_seed': sample_dialog_ab_state['seed'],
+                        'goal': before_rec['goal'],
+                        'before_rl_conversation': before_rec['conversation'],
+                        'after_best_conversation': after_rec['conversation'],
+                        'before_turns': before_rec['turns'],
+                        'after_turns': after_rec['turns'],
+                        'before_outcome': before_rec['outcome'],
+                        'after_outcome': after_rec['outcome'],
+                        'best_rl_epoch': int(best_res['epoch']),
+                    }
+                    print('Saved sample_dialog_ab to performance_records.')
+                except Exception as e:
+                    print('Could not save sample_dialog_ab: %s' % e)
             save_model(params['write_model_dir'], agt, successes / count,
                        best_model['model'], best_res['epoch'], count)
             save_performance_records(params['write_model_dir'], agt, performance_records)
+
+        if tb_writer is not None:
+            tb_writer.close()
 
     run_episodes(num_episodes, status)
 
