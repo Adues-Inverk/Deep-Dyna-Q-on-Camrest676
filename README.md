@@ -153,28 +153,153 @@ The DQN policy itself still oscillates (final-20 mean 26 %, peak 70 %) — conve
 ## Project layout
 
 ```
-.
-├── run_camrest.py                 # main entry point
-├── draw_learning_curve.py         # plot success-rate / reward curves
-├── deep_dialog/
-│   ├── dialog_config.py           # domain slots, rewards, feasible actions
-│   ├── agents/
-│   │   ├── agent_dqn.py           # AgentDQN (DDQ policy)
-│   │   └── agent_baselines.py     # rule-based agents
-│   ├── usersims/
-│   │   ├── usersim_rule.py        # handcrafted user
-│   │   └── usersim_model.py       # world model (also a learned user)
-│   ├── dialog_system/
-│   │   ├── dialog_manager.py
-│   │   ├── state_tracker.py
-│   │   └── kb_helper.py           # KB lookup + slot fill
-│   ├── qlearning/                 # DQN network
-│   ├── nlg/, nlu/                 # template NLG + no-op NLU
-│   └── data/camrest676/
-│       ├── build_camrest_data.py  # regenerate pickles from raw CamRest676
-│       ├── CamRest676.json, CamRestDB.json, CamRestOTGY.json
-│       └── camrest_kb.p, camrest_user_goals.p, …
+Deep-Dyna-Q on Camrest676/
+│
+├── run_camrest.py                    # Main training/evaluation entry point
+├── README.md                         # This file
+├── showcase_agents.py                # Train & compare multiple agents side-by-side
+├── visualize_showcase.py             # Generate plots & analysis from showcase results
+│
+├── deep_dialog/                      # Core dialog system package
+│   ├── dialog_config.py              # Domain configuration: slots, acts, rewards, feasible actions
+│   │
+│   ├── agents/                       # Agent implementations (policies)
+│   │   ├── agent.py                  # Abstract base Agent class
+│   │   ├── agent_dqn.py              # Deep Dyna-Q learner (primary RL agent)
+│   │   ├── agent_cmd.py              # Command-line agent (test harness)
+│   │   ├── agent_baselines.py        # 5 rule-based baseline policies
+│   │   │
+│   │   └── react_muzero/             # Advanced agents (organized subdirectory)
+│   │       ├── agent_react.py        # React: Reason+Act with explicit state analysis
+│   │       ├── agent_muzero.py       # MuZero: Model-based planning with MCTS
+│   │       └── __init__.py           # Exports both agents
+│   │
+│   ├── usersims/                     # User simulators (opposite side of dialog)
+│   │   ├── usersim.py                # Simulator interface & orchestration
+│   │   ├── usersim_rule.py           # Rule-based simulator (handcrafted deterministic)
+│   │   ├── usersim_model.py          # Learned world model (trains on real dialogs)
+│   │   └── user_model.py             # User behavior model (slot filling, rewards)
+│   │
+│   ├── dialog_system/                # Dialog management & state tracking
+│   │   ├── dialog_manager.py         # Orchestrates agent ↔ user interaction
+│   │   ├── state_tracker.py          # Maintains dialog state (slots, KB results, turn count)
+│   │   ├── kb_helper.py              # Knowledge base queries & matching
+│   │   ├── dict_reader.py            # Vocabulary management (acts, slots)
+│   │   └── utils.py                  # Helper functions
+│   │
+│   ├── qlearning/                    # Deep Q-Network implementation
+│   │   ├── dqn.py                    # DQN trainer (target network, experience replay)
+│   │   ├── dqn_torch.py              # DQN in PyTorch (alternative implementation)
+│   │   └── utils.py                  # Q-learning utilities
+│   │
+│   ├── nlg/                          # Natural Language Generation
+│   │   ├── nlg.py                    # Template-based NLG (default)
+│   │   ├── decoder.py, lstm_decoder_tanh.py  # LSTM decoders (available but unused)
+│   │   └── utils.py                  # Text processing helpers
+│   │
+│   ├── nlu/                          # Natural Language Understanding
+│   │   ├── nlu.py                    # Template-based NLU (no parsing needed)
+│   │   ├── lstm.py, bi_lstm.py, seq_seq.py  # LSTM models (available but unused)
+│   │   └── utils.py                  # Token/embedding utilities
+│   │
+│   ├── checkpoints/                  # Saved model checkpoints & performance logs
+│   │   ├── agt_9_performance_records.json     # Success rate, reward, turns per epoch
+│   │   └── sweep_k/                  # Hyperparameter sweep results
+│   │
+│   └── data/camrest676/              # Restaurant domain dataset
+│       ├── build_camrest_data.py     # Script to regenerate pickles from raw JSON
+│       ├── CamRest676.json           # Raw dataset from Cambridge Dialogue Systems Group
+│       ├── CamRestDB.json            # Restaurant database (110 restaurants)
+│       ├── CamRestOTGY.json          # Ontology (slot/value definitions)
+│       ├── camrest_kb.p              # Pickled knowledge base (loaded at runtime)
+│       ├── camrest_user_goals.p      # Pickled user goals (loaded at runtime)
+│       ├── camrest_dict.p            # Pickled vocabulary mappings
+│       ├── dia_acts_camrest.txt      # Dialog act definitions
+│       ├── slot_set_camrest.txt      # Slot set definitions
+│       └── dia_act_nl_pairs_camrest.json  # Dialog act ↔ NL templates
+│
+└── plotting/                         # Visualization & analysis scripts
+    ├── draw_learning_curve.py        # Plot agent performance over episodes
+    ├── compare_metrics.py            # Compare multiple agents' metrics
+    ├── compare_k.py                  # Hyperparameter sweep K comparison
+    ├── compare_sample_dialog.py      # Visualize sample dialogs
+    ├── pick_best_dialog.py           # Extract best/worst dialogs
+    └── generate_slides_figures.py    # Generate presentation figures
 ```
+
+## Directory Descriptions
+
+### `deep_dialog/agents/`
+**What it does:** Implements different dialog policies (how the system decides what to say).
+
+- **Base agents** (`agent_dqn.py`, `agent_baselines.py`): 
+  - `AgentDQN`: Learned policy using Deep Dyna-Q (RL agent that improves via experience)
+  - 5 rule-based agents: `RequestBasicsAgent`, `RequestAllAgent`, `RandomAgent`, etc. (hard-coded policies for comparison)
+  
+- **Advanced agents** (`react_muzero/`):
+  - `AgentReact`: Combines explicit reasoning about dialog state with action selection (interpretable planning)
+  - `AgentMuZero`: Model-based RL with Monte Carlo Tree Search (learns to plan like DeepMind's MuZero)
+
+Use `--agt {1..5}` for baselines, `--agt 9` for DQN, `--agt 10` for React, `--agt 11` for MuZero in `run_camrest.py`.
+
+### `deep_dialog/usersims/`
+**What it does:** Simulates the user on the other side of the dialog.
+
+- **`usersim_rule.py`**: Handcrafted rule-based user (deterministic; always follows the same goal strategy). Useful for debugging and reproducible training.
+- **`usersim_model.py`**: Learned world model trained on real dialogs. Used for planning and data augmentation (Dyna-Q).
+
+The agent learns by talking to one of these simulators, not real users. This allows 1000s of training episodes without human cost.
+
+### `deep_dialog/dialog_system/`
+**What it does:** Orchestrates the dialog and tracks state.
+
+- **`dialog_manager.py`**: Runs one episode: agent → user → agent → user... until success or max turns.
+- **`state_tracker.py`**: Maintains dialog history (what slots have been filled, what KB results exist, current turn).
+- **`kb_helper.py`**: Queries the restaurant database and matches it to user constraints.
+
+Think of this as the "game engine" that runs dialogs.
+
+### `deep_dialog/qlearning/`
+**What it does:** Deep Q-Network training (only used by `AgentDQN`).
+
+- Experience replay buffer (stores (state, action, reward, next_state) tuples)
+- Target network + online network (for stable value estimation)
+- Loss functions (Bellman error, policy loss)
+
+Other agents (`React`, `MuZero`) have their own neural networks here; this folder is DQN-specific.
+
+### `deep_dialog/nlg/` and `deep_dialog/nlu/`
+**What it does:** Convert between dialog acts (e.g., `inform(phone=123)`) and natural language.
+
+- **NLG** (generates text): `inform(phone=123)` → "The phone number is 123."
+- **NLU** (parses text): "I want Italian food" → `inform(food=Italian)`
+
+**Current status:** Using simple templates only (no neural models). LSTM hooks exist for future expansion but are not active.
+
+### `deep_dialog/data/camrest676/`
+**What it does:** Restaurant booking dataset from Cambridge Dialogue Systems Group.
+
+- **110 restaurants** in Cambridge, UK (name, phone, address, area, food type, price range)
+- **676 user goals** (e.g., "Find a cheap Italian in the city center")
+- **Pickled files** (`camrest_kb.p`, `camrest_user_goals.p`): Pre-processed data loaded into RAM at startup for speed
+
+If you modify the raw JSON files, run `build_camrest_data.py` to regenerate the pickles.
+
+### `deep_dialog/checkpoints/`
+**What it does:** Stores trained models and performance logs.
+
+- **`agt_9_performance_records.json`**: DQN success rate, avg reward, avg turns per training epoch
+- **Saved `.pkl` files**: Neural network weights (can reload to resume training or run in inference mode)
+
+### `plotting/`
+**What it does:** Analysis and visualization scripts (separate from the core system).
+
+- Plot learning curves (`draw_learning_curve.py`)
+- Compare multiple agents (`compare_metrics.py`)
+- Extract sample dialogs for inspection
+- Generate presentation figures
+
+These are optional utilities; the core training/eval loop doesn't depend on them.
 
 ## Regenerating the dataset
 

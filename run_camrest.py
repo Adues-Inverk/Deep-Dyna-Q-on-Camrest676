@@ -34,6 +34,8 @@ from deep_dialog import dialog_config
 from deep_dialog.agents import (
     AgentCmd,
     AgentDQN,
+    AgentReact,
+    AgentMuZero,
     EchoAgent,
     InformAgent,
     RandomAgent,
@@ -69,7 +71,7 @@ def main():
     parser.add_argument('--intent_err_prob', type=float, default=0.0)
 
     parser.add_argument('--agt', type=int, default=5,
-                        help='0 cmd, 1 inform, 2 request-all, 3 random, 4 echo, 5 request-basics, 9 DQN')
+                        help='0 cmd, 1 inform, 2 request-all, 3 random, 4 echo, 5 request-basics, 9 DQN, 10 React, 11 MuZero')
     parser.add_argument('--usr', type=int, default=1,
                         help='0 real, 1 rule-based simulator')
     parser.add_argument('--epsilon', type=float, default=0.0)
@@ -189,6 +191,10 @@ def main():
         agent = RequestBasicsAgent(kb, act_set, slot_set, agent_params)
     elif agt == 9:
         agent = AgentDQN(kb, act_set, slot_set, agent_params)
+    elif agt == 10:
+        agent = AgentReact(kb, act_set, slot_set, agent_params)
+    elif agt == 11:
+        agent = AgentMuZero(kb, act_set, slot_set, agent_params)
     else:
         raise ValueError(f"Unknown --agt {agt}")
 
