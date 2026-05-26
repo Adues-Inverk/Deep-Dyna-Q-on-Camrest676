@@ -29,3 +29,4 @@ deep_dialog/checkpoints/*.pkl
 
 # Keep the performance-records JSON so plots/results are reproducible
 !deep_dialog/checkpoints/agt_9_performance_records.json
+.aider*

@@ -131,7 +131,6 @@ class KBHelper:
         
         kb_results = {key:0 for key in inform_slots.keys()}
         kb_results['matching_all_constraints'] = 0
-        return kb_results
         
         query_idx_keys = frozenset(inform_slots.items())
         cached_kb_slot_ret = self.cached_kb_slot[query_idx_keys]
@@ -139,19 +138,17 @@ class KBHelper:
         if len(cached_kb_slot_ret) > 0:
             return cached_kb_slot_ret[0]
 
-        for entry_id in self.movie_dictionary.keys():
+        for entry_id, entry in self.movie_dictionary.items():
             all_slots_match = 1
-            for slot in inform_slots.keys():
-                if slot in dialog_config.NON_KB_SLOTS or inform_slots[slot] == dialog_config.I_DO_NOT_CARE:
+            for slot, value in inform_slots.items():
+                if slot in dialog_config.NON_KB_SLOTS or value == dialog_config.I_DO_NOT_CARE:
                     continue
 
-                if slot in self.movie_dictionary[entry_id].keys():
-                    if inform_slots[slot].lower() == self.movie_dictionary[entry_id][slot].lower():
-                        kb_results[slot] += 1
-                    else:
-                        all_slots_match = 0
+                if slot in entry.keys() and str(value).lower() == str(entry[slot]).lower():
+                    kb_results[slot] += 1
                 else:
                     all_slots_match = 0
+
             kb_results['matching_all_constraints'] += all_slots_match
 
         self.cached_kb_slot[query_idx_keys].append(kb_results)

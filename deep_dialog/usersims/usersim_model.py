@@ -381,37 +381,36 @@ class ModelBasedSimulator(UserSimulator):
             for slot in agent_last['request_slots'].keys():
                 agent_request_slots_rep[0, self.slot_set[slot]] = 1.0
 
-        # turn_rep = np.zeros((1, 1)) + state['turn'] / 10.
-        turn_rep = np.zeros((1, 1))
+        turn_rep = np.zeros((1, 1)) + float(state['turn']) / float(self.max_turn)
 
         ########################################################################
-        #  One-hot representation of the turn count?
+        #  One-hot representation of the turn count
         ########################################################################
         turn_onehot_rep = np.zeros((1, self.max_turn))
-        turn_onehot_rep[0, state['turn']] = 1.0
+        if state['turn'] < self.max_turn:
+            turn_onehot_rep[0, state['turn']] = 1.0
 
         ########################################################################
         #   Representation of KB results (scaled counts)
         ########################################################################
         kb_count_rep = np.zeros((1, self.slot_cardinality + 1))
+        if isinstance(kb_results_dict, dict):
+            if 'matching_all_constraints' in kb_results_dict:
+                kb_count_rep[0, self.slot_cardinality] = float(kb_results_dict['matching_all_constraints']) / 100.0
+            for slot, count in kb_results_dict.items():
+                if slot in self.slot_set:
+                    kb_count_rep[0, self.slot_set[slot]] = float(count) / 100.0
+
         ########################################################################
         #   Representation of KB results (binary)
         ########################################################################
         kb_binary_rep = np.zeros((1, self.slot_cardinality + 1))
-
-        # kb_count_rep = np.zeros((1, self.slot_cardinality + 1)) + kb_results_dict['matching_all_constraints'] / 100.
-        # for slot in kb_results_dict:
-        #     if slot in self.slot_set:
-        #         kb_count_rep[0, self.slot_set[slot]] = kb_results_dict[slot] / 100.
-        #
-        # ########################################################################
-        # #   Representation of KB results (binary)
-        # ########################################################################
-        # kb_binary_rep = np.zeros((1, self.slot_cardinality + 1)) + np.sum(
-        #     kb_results_dict['matching_all_constraints'] > 0.)
-        # for slot in kb_results_dict:
-        #     if slot in self.slot_set:
-        #         kb_binary_rep[0, self.slot_set[slot]] = np.sum(kb_results_dict[slot] > 0.)
+        if isinstance(kb_results_dict, dict):
+            if kb_results_dict.get('matching_all_constraints', 0) > 0:
+                kb_binary_rep[0, self.slot_cardinality] = 1.0
+            for slot, count in kb_results_dict.items():
+                if slot in self.slot_set and count > 0:
+                    kb_binary_rep[0, self.slot_set[slot]] = 1.0
 
         self.final_representation = np.hstack(
             [user_act_rep, user_inform_slots_rep, user_request_slots_rep, agent_act_rep, agent_inform_slots_rep,

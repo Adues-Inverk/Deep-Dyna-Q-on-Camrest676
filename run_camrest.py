@@ -19,8 +19,8 @@ import os
 import pickle
 import random
 from datetime import datetime
-
 import numpy
+import numpy as np
 import torch
 
 try:
@@ -302,7 +302,7 @@ def main():
                     record_training_data_for_user=False,
                 )
             hist = dialog_manager.state_tracker.dialog_history_dictionaries()
-            from compare_sample_dialog import (
+            from plotting.compare_sample_dialog import (
                 format_outcome_footer,
                 format_turns_as_conversation,
             )
@@ -514,8 +514,14 @@ def main():
                     agent, 'last_avg_bellman_loss', 0.0
                 )
 
-                if params['train_world_model']:
+                # Disable world model training after epoch 100 to prevent synthetic bad experiences
+                # from degrading the learned DQN policy
+                if params['train_world_model'] and episode < 100:
                     world_model.train(batch_size, 1)
+                elif episode == 100:
+                    # Clear world model experience buffer after epoch 100 - only use real interactions
+                    agent.experience_replay_pool_from_model.clear()
+                    print("Cleared world model experience buffer - continuing with real interactions only")
 
                 if tb_writer is not None:
                     step = episode

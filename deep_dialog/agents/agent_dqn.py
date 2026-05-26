@@ -9,7 +9,7 @@ import torch
 import torch.optim as optim
 import torch.nn.functional as F
 
-DEVICE = torch.device('cpu')
+DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 Transition = namedtuple('Transition', ('state', 'action', 'reward', 'next_state', 'term'))
 
 class AgentDQN(Agent):
@@ -33,23 +33,31 @@ class AgentDQN(Agent):
         self.experience_replay_pool_from_model = deque(maxlen=self.experience_replay_pool_size)
         self.running_expereince_pool = None  # hold experience from both user and world model
 
-        self.hidden_size = params.get('dqn_hidden_size', 60)
+        self.hidden_size = params.get('dqn_hidden_size', 128)
         self.gamma = params.get('gamma', 0.9)
         self.predict_mode = params.get('predict_mode', False)
         self.warm_start = params.get('warm_start', 0)
+        self.kb_size = len(movie_dict) if movie_dict is not None else 1
+        self.min_epsilon = params.get('min_epsilon', 0.01)
+        self.epsilon_decay = params.get('epsilon_decay', 0.995)
 
         self.max_turn = params['max_turn'] + 5
-        self.state_dimension = 2 * self.act_cardinality + 7 * self.slot_cardinality + 3 + self.max_turn
+        self.state_dimension = 2 * self.act_cardinality + 7 * self.slot_cardinality + 5 + self.max_turn
 
-        self.dqn = DQN(self.state_dimension, self.hidden_size, self.num_actions).to(DEVICE)
-        self.target_dqn = DQN(self.state_dimension, self.hidden_size, self.num_actions).to(DEVICE)
+        self.dqn = DQN(self.state_dimension, self.hidden_size, self.num_actions, dropout_rate=0.25).to(DEVICE)
+        self.target_dqn = DQN(self.state_dimension, self.hidden_size, self.num_actions, dropout_rate=0.25).to(DEVICE)
         self.target_dqn.load_state_dict(self.dqn.state_dict())
         self.target_dqn.eval()
 
-        self.optimizer = optim.RMSprop(self.dqn.parameters(), lr=1e-3)
+        self.optimizer = optim.Adam(self.dqn.parameters(), lr=params.get('learning_rate', 1e-3), weight_decay=1e-4)
 
         self.cur_bellman_err = 0
         self.last_avg_bellman_loss = 0.0
+        self.target_update_freq = params.get('target_update_freq', 2)
+        self.update_counter = 0
+        self.epoch_counter = 0
+        self.world_model_weight = params.get('world_model_weight', 0.2)  # Only 20% of policy training uses model-based exp
+        self.epsilon_decay = params.get('epsilon_decay', 0.9992)  # Slower decay to maintain exploration longer
 
         # Prediction Mode: load trained DQN model
         if params['trained_model_path'] != None:
@@ -65,7 +73,6 @@ class AgentDQN(Agent):
         self._user_request_slots = []
     def state_to_action(self, state):
         """ DQN: Input state, output action """
-        # self.state['turn'] += 2
         self._user_request_slots = [
             s for s in state['current_slots']['request_slots'].keys()
             if s != 'taskcomplete'
@@ -135,41 +142,43 @@ class AgentDQN(Agent):
             for slot in agent_last['request_slots'].keys():
                 agent_request_slots_rep[0, self.slot_set[slot]] = 1.0
 
-        # turn_rep = np.zeros((1,1)) + state['turn'] / 10.
-        turn_rep = np.zeros((1, 1))
+        turn_rep = np.zeros((1, 1)) + float(state['turn']) / float(self.max_turn)
+        slot_count_rep = np.zeros((1, 2))
+        slot_count_rep[0, 0] = float(len(current_slots['inform_slots'])) / max(1.0, float(self.slot_cardinality))
+        slot_count_rep[0, 1] = float(len(current_slots['request_slots'])) / max(1.0, float(self.slot_cardinality))
 
         ########################################################################
-        #  One-hot representation of the turn count?
+        #  One-hot representation of the turn count
         ########################################################################
         turn_onehot_rep = np.zeros((1, self.max_turn))
-        turn_onehot_rep[0, state['turn']] = 1.0
+        if state['turn'] < self.max_turn:
+            turn_onehot_rep[0, state['turn']] = 1.0
 
-        # ########################################################################
-        # #   Representation of KB results (scaled counts)
-        # ########################################################################
-        # kb_count_rep = np.zeros((1, self.slot_cardinality + 1)) + kb_results_dict['matching_all_constraints'] / 100.
-        # for slot in kb_results_dict:
-        #     if slot in self.slot_set:
-        #         kb_count_rep[0, self.slot_set[slot]] = kb_results_dict[slot] / 100.
-        #
-        # ########################################################################
-        # #   Representation of KB results (binary)
-        # ########################################################################
-        # kb_binary_rep = np.zeros((1, self.slot_cardinality + 1)) + np.sum( kb_results_dict['matching_all_constraints'] > 0.)
-        # for slot in kb_results_dict:
-        #     if slot in self.slot_set:
-        #         kb_binary_rep[0, self.slot_set[slot]] = np.sum( kb_results_dict[slot] > 0.)
-
+        ########################################################################
+        #   Representation of KB results (scaled counts)
+        ########################################################################
         kb_count_rep = np.zeros((1, self.slot_cardinality + 1))
+        if isinstance(kb_results_dict, dict):
+            if 'matching_all_constraints' in kb_results_dict:
+                kb_count_rep[0, self.slot_cardinality] = float(kb_results_dict['matching_all_constraints']) / float(self.kb_size)
+            for slot, count in kb_results_dict.items():
+                if slot in self.slot_set:
+                    kb_count_rep[0, self.slot_set[slot]] = float(count) / float(self.kb_size)
 
         ########################################################################
         #   Representation of KB results (binary)
         ########################################################################
         kb_binary_rep = np.zeros((1, self.slot_cardinality + 1))
+        if isinstance(kb_results_dict, dict):
+            if kb_results_dict.get('matching_all_constraints', 0) > 0:
+                kb_binary_rep[0, self.slot_cardinality] = 1.0
+            for slot, count in kb_results_dict.items():
+                if slot in self.slot_set and count > 0:
+                    kb_binary_rep[0, self.slot_set[slot]] = 1.0
 
         self.final_representation = np.hstack(
             [user_act_rep, user_inform_slots_rep, user_request_slots_rep, agent_act_rep, agent_inform_slots_rep,
-             agent_request_slots_rep, current_slots_rep, turn_rep, turn_onehot_rep, kb_binary_rep, kb_count_rep])
+             agent_request_slots_rep, current_slots_rep, turn_rep, slot_count_rep, turn_onehot_rep, kb_binary_rep, kb_count_rep])
         return self.final_representation
 
     def run_policy(self, representation):
@@ -209,8 +218,10 @@ class AgentDQN(Agent):
     def DQN_policy(self, state_representation):
         """ Return action from DQN"""
 
+        self.dqn.eval()
         with torch.no_grad():
-            action = self.dqn.predict(torch.FloatTensor(state_representation))
+            action = self.dqn.predict(torch.FloatTensor(state_representation).to(DEVICE))
+        self.dqn.train()
         return action
 
     def action_index(self, act_slot_response):
@@ -261,7 +272,16 @@ class AgentDQN(Agent):
 
         self.cur_bellman_err = 0.
         self.cur_bellman_err_planning = 0.
-        self.running_expereince_pool = list(self.experience_replay_pool) + list(self.experience_replay_pool_from_model)
+        
+        # Weighted combination: prioritize real user interactions over world model trajectories
+        real_experiences = list(self.experience_replay_pool)
+        model_experiences = list(self.experience_replay_pool_from_model)
+        
+        # Use world_model_weight to control balance
+        weighted_model_size = int(len(real_experiences) * self.world_model_weight)
+        sampled_model = random.sample(model_experiences, min(weighted_model_size, len(model_experiences)))
+        
+        self.running_expereince_pool = real_experiences + sampled_model
 
         if len(self.running_expereince_pool) == 0:
             self.last_avg_bellman_loss = 0.0
@@ -272,17 +292,22 @@ class AgentDQN(Agent):
                 self.optimizer.zero_grad()
                 batch = self.sample_from_buffer(batch_size)
 
-                state_value = self.dqn(torch.FloatTensor(batch.state)).gather(1, torch.tensor(batch.action))
-                next_state_value, _ = self.target_dqn(torch.FloatTensor(batch.next_state)).max(1)
-                next_state_value = next_state_value.unsqueeze(1)
+                state_value = self.dqn(torch.FloatTensor(batch.state).to(DEVICE), training=True).gather(1, torch.tensor(batch.action, dtype=torch.long, device=DEVICE))
+                next_actions = self.dqn(torch.FloatTensor(batch.next_state).to(DEVICE), training=False).argmax(1).unsqueeze(1)
+                next_state_value = self.target_dqn(torch.FloatTensor(batch.next_state).to(DEVICE), training=False).gather(1, next_actions)
                 term = np.asarray(batch.term, dtype=np.float32)
-                expected_value = torch.FloatTensor(batch.reward) + self.gamma * next_state_value * (
-                    1 - torch.FloatTensor(term))
+                expected_value = torch.FloatTensor(batch.reward).to(DEVICE) + self.gamma * next_state_value * (
+                    1 - torch.FloatTensor(term).to(DEVICE))
 
-                loss = F.mse_loss(state_value, expected_value)
+                loss = F.smooth_l1_loss(state_value, expected_value)
                 loss.backward()
+                torch.nn.utils.clip_grad_norm_(self.dqn.parameters(), max_norm=1.0)
                 self.optimizer.step()
                 self.cur_bellman_err += loss.item()
+                
+                self.update_counter += 1
+                if self.update_counter % self.target_update_freq == 0:
+                    self.target_dqn.load_state_dict(self.dqn.state_dict())
 
             if len(self.experience_replay_pool) != 0:
                 denom = max(1.0, len(self.experience_replay_pool) / float(batch_size))
@@ -297,6 +322,15 @@ class AgentDQN(Agent):
         self.last_avg_bellman_loss = (
             self.cur_bellman_err / total_updates if total_updates > 0 else 0.0
         )
+
+        if not self.predict_mode and self.epsilon > self.min_epsilon:
+            self.epsilon = max(self.min_epsilon, self.epsilon * self.epsilon_decay)
+        
+        # Adaptive learning rate: reduce learning rate after epoch 100 to stabilize learning
+        self.epoch_counter += 1
+        if self.epoch_counter > 100 and self.epoch_counter % 10 == 0:
+            for param_group in self.optimizer.param_groups:
+                param_group['lr'] = max(5e-5, param_group['lr'] * 0.98)
 
     # def train_one_iter(self, batch_size=1, num_batches=100, planning=False):
     #     """ Train DQN with experience replay """
