@@ -14,15 +14,15 @@ class DQN(nn.Module):
 
         self.fc1 = nn.Linear(self.input_size, self.hidden_size)
         self.dropout1 = nn.Dropout(dropout_rate)
-        
+
         self.value_fc = nn.Linear(self.hidden_size, self.hidden_size // 2)
         self.value_dropout = nn.Dropout(dropout_rate)
         self.advantage_fc = nn.Linear(self.hidden_size, self.hidden_size // 2)
         self.advantage_dropout = nn.Dropout(dropout_rate)
-        
+
         self.value_out = nn.Linear(self.hidden_size // 2, 1)
         self.advantage_out = nn.Linear(self.hidden_size // 2, self.output_size)
-        
+
         self._init_weights()
 
     def _init_weights(self):
@@ -32,22 +32,22 @@ class DQN(nn.Module):
             if layer.bias is not None:
                 nn.init.constant_(layer.bias, 0.0)
 
-    def forward(self, x, training=True):
+    def forward(self, x):
+        # nn.Dropout automatically respects self.training (set via model.train() / model.eval())
         x = F.relu(self.fc1(x))
-        x = self.dropout1(x) if training else x
-        
+        x = self.dropout1(x)
+
         v = F.relu(self.value_fc(x))
-        v = self.value_dropout(v) if training else v
-        
+        v = self.value_dropout(v)
+
         a = F.relu(self.advantage_fc(x))
-        a = self.advantage_dropout(a) if training else a
-        
+        a = self.advantage_dropout(a)
+
         v = self.value_out(v)
         a = self.advantage_out(a)
         return v + a - a.mean(1, keepdim=True)
 
     def predict(self, x):
         with torch.no_grad():
-            y = self.forward(x, training=False)
+            y = self.forward(x)
         return torch.argmax(y, 1)
-

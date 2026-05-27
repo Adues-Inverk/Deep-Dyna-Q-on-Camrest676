@@ -84,15 +84,21 @@ def main():
     parser.add_argument('--cmd_input_mode', type=int, default=0)
 
     # RL agent parameters
-    parser.add_argument('--experience_replay_pool_size', type=int, default=5000)
+    parser.add_argument('--experience_replay_pool_size', type=int, default=10000)
     parser.add_argument('--dqn_hidden_size', type=int, default=256)
     parser.add_argument('--batch_size', type=int, default=64)
-    parser.add_argument('--gamma', type=float, default=0.9)
+    parser.add_argument('--gamma', type=float, default=0.99)
     parser.add_argument('--predict_mode', type=bool, default=False)
     parser.add_argument('--simulation_epoch_size', type=int, default=50)
     parser.add_argument('--warm_start', type=int, default=1)
     parser.add_argument('--warm_start_epochs', type=int, default=100)
-    parser.add_argument('--planning_steps', type=int, default=4)
+    parser.add_argument('--planning_steps', type=int, default=10)
+    parser.add_argument('--world_model_weight', type=float, default=0.5,
+                        help='Fraction of each DQN training batch drawn from world-model experience')
+    parser.add_argument('--per_alpha', type=float, default=0.6,
+                        help='PER priority exponent (0=uniform, 1=full PER)')
+    parser.add_argument('--per_beta', type=float, default=0.4,
+                        help='PER importance-sampling initial beta (anneals to 1.0)')
     parser.add_argument('--trained_model_path', type=str, default=None)
     parser.add_argument('-o', '--write_model_dir', type=str, default='./deep_dialog/checkpoints/')
     parser.add_argument('--save_check_point', type=int, default=10)
@@ -174,6 +180,9 @@ def main():
         'trained_model_path': params['trained_model_path'],
         'warm_start': params['warm_start'],
         'cmd_input_mode': params['cmd_input_mode'],
+        'world_model_weight': params.get('world_model_weight', 0.5),
+        'per_alpha': params.get('per_alpha', 0.6),
+        'per_beta': params.get('per_beta', 0.4),
     }
 
     agt = params['agt']
@@ -513,12 +522,11 @@ def main():
                     agent, 'last_avg_bellman_loss', 0.0
                 )
 
-                _wm_freeze = num_episodes // 2
-                if params['train_world_model'] and episode < _wm_freeze:
+                # Train world model continuously — no freeze; the model improves
+                # alongside the policy and avoids the abrupt distribution shift
+                # that a mid-training buffer clear causes.
+                if params['train_world_model']:
                     world_model.train(batch_size, 1)
-                elif episode == _wm_freeze:
-                    agent.experience_replay_pool_from_model.clear()
-                    print(f"Cleared world model experience buffer at episode {episode} - continuing with real interactions only")
 
                 if tb_writer is not None:
                     step = episode

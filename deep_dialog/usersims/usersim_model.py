@@ -34,6 +34,23 @@ class ModelBasedSimulator(UserSimulator):
         self.max_turn = params['max_turn'] + 4
         self.state_dimension = 2 * self.act_cardinality + 9 * self.slot_cardinality + 3 + self.max_turn
 
+        # Precomputed offsets for prepare_state_representation (avoids 11 small array allocs per call)
+        A, S, T = self.act_cardinality, self.slot_cardinality, self.max_turn
+        self._sr_off = {
+            'user_act':      0,
+            'user_inform':   A,
+            'user_request':  A + S,
+            'agent_act':     A + 2*S,
+            'agent_inform':  2*A + 2*S,
+            'agent_request': 2*A + 3*S,
+            'cur_slots':     2*A + 4*S,
+            'turn':          2*A + 5*S,
+            'turn_onehot':   2*A + 5*S + 1,
+            'kb_binary':     2*A + 5*S + 1 + T,
+            'kb_count':      2*A + 6*S + 2 + T,
+        }
+        # state_dimension excludes the 2*S goal appended by register_experience_replay_tuple
+
         self.slot_err_probability = params['slot_err_probability']
         self.slot_err_mode = params['slot_err_mode']
         self.intent_err_probability = params['intent_err_probability']
@@ -121,32 +138,19 @@ class ModelBasedSimulator(UserSimulator):
         return self.sample_goal
 
     def prepare_user_goal_representation(self, user_goal):
-        """"""
-
-        request_slots_rep = np.zeros((1, self.slot_cardinality))
-        inform_slots_rep = np.zeros((1, self.slot_cardinality))
+        S = self.slot_cardinality
+        rep = np.zeros(2 * S, dtype=np.float32)
         for s in user_goal['request_slots']:
-            s = s.strip()
-            request_slots_rep[0, self.slot_set[s]] = 1
+            rep[self.slot_set[s.strip()]] = 1.0
         for s in user_goal['inform_slots']:
-            s = s.strip()
-            inform_slots_rep[0, self.slot_set[s]] = 1
-        self.user_goal_representation = np.hstack([request_slots_rep, inform_slots_rep])
-
+            rep[S + self.slot_set[s.strip()]] = 1.0
+        self.user_goal_representation = rep.reshape(1, -1)
         return self.user_goal_representation
 
     def sample_from_buffer(self, batch_size):
         """Sample batch size examples from experience buffer and convert it to torch readable format"""
-
-        batch = [random.choice(self.training_examples) for i in range(batch_size)]
-        np_batch = []
-
-        for x in range(len(Transition._fields)):
-            v = []
-            for i in range(batch_size):
-                v.append(batch[i][x])
-            np_batch.append(np.vstack(v))
-
+        batch = random.choices(self.training_examples, k=batch_size)
+        np_batch = [np.vstack([b[x] for b in batch]) for x in range(len(Transition._fields))]
         return Transition(*np_batch)
 
     def train(self, batch_size=1, num_batches=1):
@@ -325,94 +329,50 @@ class ModelBasedSimulator(UserSimulator):
 
     def prepare_state_representation(self, state):
         """ Create the representation for each state """
+        S = self.slot_cardinality
+        T = self.max_turn
+        dim = 2 * self.act_cardinality + 7 * S + 3 + T
+        rep = np.zeros(dim, dtype=np.float32)
+        o = self._sr_off
 
         user_action = state['user_action']
         current_slots = state['current_slots']
         kb_results_dict = state['kb_results_dict']
         agent_last = state['agent_action']
 
-        ########################################################################
-        #   Create one-hot of acts to represent the current user action
-        ########################################################################
-        user_act_rep = np.zeros((1, self.act_cardinality))
-        user_act_rep[0, self.act_set[user_action['diaact']]] = 1.0
+        rep[o['user_act'] + self.act_set[user_action['diaact']]] = 1.0
+        for slot in user_action['inform_slots']:
+            rep[o['user_inform'] + self.slot_set[slot]] = 1.0
+        for slot in user_action['request_slots']:
+            rep[o['user_request'] + self.slot_set[slot]] = 1.0
 
-        ########################################################################
-        #     Create bag of inform slots representation to represent the current user action
-        ########################################################################
-        user_inform_slots_rep = np.zeros((1, self.slot_cardinality))
-        for slot in user_action['inform_slots'].keys():
-            user_inform_slots_rep[0, self.slot_set[slot]] = 1.0
+        if agent_last:
+            rep[o['agent_act'] + self.act_set[agent_last['diaact']]] = 1.0
+            for slot in agent_last['inform_slots']:
+                rep[o['agent_inform'] + self.slot_set[slot]] = 1.0
+            for slot in agent_last['request_slots']:
+                rep[o['agent_request'] + self.slot_set[slot]] = 1.0
 
-        ########################################################################
-        #   Create bag of request slots representation to represent the current user action
-        ########################################################################
-        user_request_slots_rep = np.zeros((1, self.slot_cardinality))
-        for slot in user_action['request_slots'].keys():
-            user_request_slots_rep[0, self.slot_set[slot]] = 1.0
-
-        ########################################################################
-        #   Creat bag of filled_in slots based on the current_slots
-        ########################################################################
-        current_slots_rep = np.zeros((1, self.slot_cardinality))
         for slot in current_slots['inform_slots']:
-            current_slots_rep[0, self.slot_set[slot]] = 1.0
+            rep[o['cur_slots'] + self.slot_set[slot]] = 1.0
 
-        ########################################################################
-        #   Encode last agent act
-        ########################################################################
-        agent_act_rep = np.zeros((1, self.act_cardinality))
-        if agent_last:
-            agent_act_rep[0, self.act_set[agent_last['diaact']]] = 1.0
+        turn = state['turn']
+        rep[o['turn']] = float(turn) / float(T)
+        if turn < T:
+            rep[o['turn_onehot'] + turn] = 1.0
 
-        ########################################################################
-        #   Encode last agent inform slots
-        ########################################################################
-        agent_inform_slots_rep = np.zeros((1, self.slot_cardinality))
-        if agent_last:
-            for slot in agent_last['inform_slots'].keys():
-                agent_inform_slots_rep[0, self.slot_set[slot]] = 1.0
-
-        ########################################################################
-        #   Encode last agent request slots
-        ########################################################################
-        agent_request_slots_rep = np.zeros((1, self.slot_cardinality))
-        if agent_last:
-            for slot in agent_last['request_slots'].keys():
-                agent_request_slots_rep[0, self.slot_set[slot]] = 1.0
-
-        turn_rep = np.zeros((1, 1)) + float(state['turn']) / float(self.max_turn)
-
-        ########################################################################
-        #  One-hot representation of the turn count
-        ########################################################################
-        turn_onehot_rep = np.zeros((1, self.max_turn))
-        if state['turn'] < self.max_turn:
-            turn_onehot_rep[0, state['turn']] = 1.0
-
-        ########################################################################
-        #   Representation of KB results (scaled counts)
-        ########################################################################
-        kb_count_rep = np.zeros((1, self.slot_cardinality + 1))
         if isinstance(kb_results_dict, dict):
+            kb_b, kb_c = o['kb_binary'], o['kb_count']
+            if kb_results_dict.get('matching_all_constraints', 0) > 0:
+                rep[kb_b + S] = 1.0
             if 'matching_all_constraints' in kb_results_dict:
-                kb_count_rep[0, self.slot_cardinality] = float(kb_results_dict['matching_all_constraints']) / 100.0
+                rep[kb_c + S] = float(kb_results_dict['matching_all_constraints']) / 100.0
             for slot, count in kb_results_dict.items():
                 if slot in self.slot_set:
-                    kb_count_rep[0, self.slot_set[slot]] = float(count) / 100.0
+                    idx = self.slot_set[slot]
+                    if count > 0:
+                        rep[kb_b + idx] = 1.0
+                    rep[kb_c + idx] = float(count) / 100.0
 
-        ########################################################################
-        #   Representation of KB results (binary)
-        ########################################################################
-        kb_binary_rep = np.zeros((1, self.slot_cardinality + 1))
-        if isinstance(kb_results_dict, dict):
-            if kb_results_dict.get('matching_all_constraints', 0) > 0:
-                kb_binary_rep[0, self.slot_cardinality] = 1.0
-            for slot, count in kb_results_dict.items():
-                if slot in self.slot_set and count > 0:
-                    kb_binary_rep[0, self.slot_set[slot]] = 1.0
-
-        self.final_representation = np.hstack(
-            [user_act_rep, user_inform_slots_rep, user_request_slots_rep, agent_act_rep, agent_inform_slots_rep,
-             agent_request_slots_rep, current_slots_rep, turn_rep, turn_onehot_rep, kb_binary_rep, kb_count_rep])
+        self.final_representation = rep.reshape(1, -1)
         return self.final_representation
