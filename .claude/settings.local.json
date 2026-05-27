@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python --version 2>&1)",
+      "PowerShell(python -c \"import sys; print\\(sys.executable\\)\" 2>&1)",
+      "PowerShell(python -m pip install numpy torch scipy 2>&1)"
+    ]
+  }
+}

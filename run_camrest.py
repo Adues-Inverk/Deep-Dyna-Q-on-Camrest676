@@ -74,7 +74,7 @@ def main():
                         help='0 cmd, 1 inform, 2 request-all, 3 random, 4 echo, 5 request-basics, 9 DQN, 10 React, 11 MuZero')
     parser.add_argument('--usr', type=int, default=1,
                         help='0 real, 1 rule-based simulator')
-    parser.add_argument('--epsilon', type=float, default=0.0)
+    parser.add_argument('--epsilon', type=float, default=0.1)
 
     parser.add_argument('--act_level', type=int, default=0,
                         help='0 dia-act level (no NLU), 1 NL level')
@@ -85,8 +85,8 @@ def main():
 
     # RL agent parameters
     parser.add_argument('--experience_replay_pool_size', type=int, default=5000)
-    parser.add_argument('--dqn_hidden_size', type=int, default=60)
-    parser.add_argument('--batch_size', type=int, default=16)
+    parser.add_argument('--dqn_hidden_size', type=int, default=256)
+    parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--gamma', type=float, default=0.9)
     parser.add_argument('--predict_mode', type=bool, default=False)
     parser.add_argument('--simulation_epoch_size', type=int, default=50)
@@ -509,19 +509,16 @@ def main():
                     best_res['epoch'] = episode
 
                 agent.train(batch_size, 1)
-                agent.reset_dqn_target()
                 performance_records['bellman_loss'][episode] = getattr(
                     agent, 'last_avg_bellman_loss', 0.0
                 )
 
-                # Disable world model training after epoch 100 to prevent synthetic bad experiences
-                # from degrading the learned DQN policy
-                if params['train_world_model'] and episode < 100:
+                _wm_freeze = num_episodes // 2
+                if params['train_world_model'] and episode < _wm_freeze:
                     world_model.train(batch_size, 1)
-                elif episode == 100:
-                    # Clear world model experience buffer after epoch 100 - only use real interactions
+                elif episode == _wm_freeze:
                     agent.experience_replay_pool_from_model.clear()
-                    print("Cleared world model experience buffer - continuing with real interactions only")
+                    print(f"Cleared world model experience buffer at episode {episode} - continuing with real interactions only")
 
                 if tb_writer is not None:
                     step = episode

@@ -53,7 +53,7 @@ class AgentDQN(Agent):
 
         self.cur_bellman_err = 0
         self.last_avg_bellman_loss = 0.0
-        self.target_update_freq = params.get('target_update_freq', 2)
+        self.target_update_freq = params.get('target_update_freq', 50)
         self.update_counter = 0
         self.epoch_counter = 0
         self.world_model_weight = params.get('world_model_weight', 0.2)  # Only 20% of policy training uses model-based exp
