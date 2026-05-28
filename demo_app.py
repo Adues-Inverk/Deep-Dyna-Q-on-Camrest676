@@ -518,7 +518,7 @@ with tab_curves:
     if not os.path.exists(perf_path):
         st.warning("Performance records not found at: " + perf_path)
     else:
-        with open(perf_path) as f:
+        with open(perf_path, encoding="utf-8") as f:
             perf = json.load(f)
 
         eps = sorted(perf["success_rate"].keys(), key=int)
@@ -658,7 +658,7 @@ with tab_sweep:
     for kd in k_dirs:
         rec_p = os.path.join(sweep_base, kd, "agt_9_performance_records.json")
         if os.path.exists(rec_p):
-            with open(rec_p) as f:
+            with open(rec_p, encoding="utf-8") as f:
                 k_data[kd] = json.load(f)
 
     if not k_data:
@@ -789,7 +789,7 @@ with tab_sweep:
             ]:
                 if not os.path.exists(path):
                     continue
-                with open(path) as f:
+                with open(path, encoding="utf-8") as f:
                     rec = json.load(f)
                 eps_b = sorted(rec["success_rate"].keys(), key=int)
                 x_b   = [int(e) for e in eps_b]
@@ -814,7 +814,7 @@ with tab_sweep:
             for label, path, k_v in [("k=0", k0_rec, 0), ("k=5", k5_rec, 5)]:
                 if not os.path.exists(path):
                     continue
-                with open(path) as f:
+                with open(path, encoding="utf-8") as f:
                     rec = json.load(f)
                 mab = rec.get("metrics_ab", {})
                 if mab:

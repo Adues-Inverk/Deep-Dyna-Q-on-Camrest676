@@ -1,0 +1,34 @@
+{
+  "dia_acts": {
+    "inform": [
+      {"request_slots":[],"inform_slots":["name"],       "nl":{"agt":"The hotel is $name$.","usr":"I'm looking for a hotel called $name$."}},
+      {"request_slots":[],"inform_slots":["price"],      "nl":{"agt":"The total price is $price$.","usr":"My budget allows $price$."}},
+      {"request_slots":[],"inform_slots":["gst_rating"], "nl":{"agt":"The guest rating is $gst_rating$.","usr":"I'd like a rating of $gst_rating$."}},
+      {"request_slots":[],"inform_slots":["amenities"],  "nl":{"agt":"It includes $amenities$.","usr":"I want $amenities$."}},
+      {"request_slots":[],"inform_slots":["dst_city"],   "nl":{"agt":"It is located in $dst_city$.","usr":"I want to go to $dst_city$."}},
+      {"request_slots":[],"inform_slots":["budget_range"],"nl":{"agt":"The price range is $budget_range$.","usr":"My budget is $budget_range$."}},
+      {"request_slots":[],"inform_slots":["n_adults"],   "nl":{"agt":"That is for $n_adults$ adults.","usr":"There will be $n_adults$ adults."}},
+      {"request_slots":[],"inform_slots":["category"],   "nl":{"agt":"It is a $category$.","usr":"I'd like a $category$."}},
+      {"request_slots":[],"inform_slots":["taskcomplete"],"nl":{"agt":"I have found a hotel that matches your criteria.","usr":""}}
+    ],
+    "request": [
+      {"request_slots":["dst_city"],    "inform_slots":[],"nl":{"agt":"Where would you like to travel?","usr":"What city is it in?"}},
+      {"request_slots":["budget_range"],"inform_slots":[],"nl":{"agt":"What is your budget range?","usr":"What is the price range?"}},
+      {"request_slots":["n_adults"],    "inform_slots":[],"nl":{"agt":"How many adults will be travelling?","usr":"How many guests does it accommodate?"}},
+      {"request_slots":["category"],    "inform_slots":[],"nl":{"agt":"What hotel category do you prefer?","usr":"What category is the hotel?"}},
+      {"request_slots":["name"],        "inform_slots":[],"nl":{"agt":"Which hotel are you interested in?","usr":"What is the hotel name?"}},
+      {"request_slots":["price"],       "inform_slots":[],"nl":{"agt":"What price are you expecting?","usr":"What is the price?"}},
+      {"request_slots":["gst_rating"],  "inform_slots":[],"nl":{"agt":"What guest rating do you require?","usr":"What is the guest rating?"}},
+      {"request_slots":["amenities"],   "inform_slots":[],"nl":{"agt":"What amenities do you require?","usr":"What amenities does it have?"}}
+    ],
+    "thanks":           [{"request_slots":[],"inform_slots":[],"nl":{"agt":"Thank you, goodbye!","usr":"Thank you, goodbye!"}}],
+    "deny":             [{"request_slots":[],"inform_slots":[],"nl":{"agt":"I'm sorry, that doesn't match.","usr":"That's not what I wanted."}}],
+    "closing":          [{"request_slots":[],"inform_slots":[],"nl":{"agt":"Goodbye!","usr":"Goodbye!"}}],
+    "confirm_question": [{"request_slots":[],"inform_slots":[],"nl":{"agt":"Can you confirm?","usr":"Is that correct?"}}],
+    "confirm_answer":   [{"request_slots":[],"inform_slots":[],"nl":{"agt":"Yes, that is correct.","usr":"Yes, that is correct."}}],
+    "no_result":        [{"request_slots":[],"inform_slots":[],"nl":{"agt":"Sorry, no hotels match your criteria.","usr":""}}],
+    "sorry":            [{"request_slots":[],"inform_slots":[],"nl":{"agt":"I'm sorry, I couldn't find that.","usr":""}}],
+    "greeting":         [{"request_slots":[],"inform_slots":[],"nl":{"agt":"Hello! How can I help you find a hotel today?","usr":"Hello!"}}],
+    "moreinfo":         [{"request_slots":[],"inform_slots":[],"nl":{"agt":"","usr":"Can you tell me more?"}}]
+  }
+}

@@ -1,0 +1,11 @@
+request
+inform
+confirm_question
+confirm_answer
+thanks
+deny
+closing
+no_result
+sorry
+greeting
+moreinfo

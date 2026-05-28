@@ -1,0 +1,10 @@
+dst_city
+budget_range
+n_adults
+category
+name
+price
+gst_rating
+amenities
+taskcomplete
+closing
