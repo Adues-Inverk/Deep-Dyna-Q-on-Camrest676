@@ -99,6 +99,14 @@ def main():
                         help='PER priority exponent (0=uniform, 1=full PER)')
     parser.add_argument('--per_beta', type=float, default=0.4,
                         help='PER importance-sampling initial beta (anneals to 1.0)')
+    parser.add_argument('--target_tau', type=float, default=0.005,
+                        help='Soft target-network update rate (tau)')
+    parser.add_argument('--learning_rate', type=float, default=1e-3,
+                        help='Adam optimizer learning rate')
+    parser.add_argument('--min_epsilon', type=float, default=0.05,
+                        help='Minimum exploration epsilon after decay')
+    parser.add_argument('--epsilon_decay', type=float, default=0.992,
+                        help='Multiplicative epsilon decay per training epoch')
     parser.add_argument('--trained_model_path', type=str, default=None)
     parser.add_argument('-o', '--write_model_dir', type=str, default='./deep_dialog/checkpoints/')
     parser.add_argument('--save_check_point', type=int, default=10)
@@ -183,6 +191,10 @@ def main():
         'world_model_weight': params.get('world_model_weight', 0.5),
         'per_alpha': params.get('per_alpha', 0.6),
         'per_beta': params.get('per_beta', 0.4),
+        'target_tau': params.get('target_tau', 0.005),
+        'learning_rate': params.get('learning_rate', 1e-3),
+        'min_epsilon': params.get('min_epsilon', 0.05),
+        'epsilon_decay': params.get('epsilon_decay', 0.992),
     }
 
     agt = params['agt']
