@@ -196,6 +196,9 @@ def main():
 
     # ── Dialog Manager ────────────────────────────────────────────────────────
     dialog_manager = DialogManager(agent, user_sim, world_model, act_set, slot_set, kb)
+    # Remove per-turn penalty: without this, agents learn to fail quickly (2 turns)
+    # to avoid the -1/turn cost, collapsing to 0% SR on complex tasks.
+    dialog_manager.reward_function = dialog_manager.reward_function_without_penalty
 
     write_model_dir = params['write_model_dir']
     os.makedirs(write_model_dir, exist_ok=True)

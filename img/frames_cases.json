@@ -1,0 +1,392 @@
+{
+  "candidate_pool_size": 40,
+  "success_count": 1,
+  "fail_count": 1,
+  "success_case": {
+    "seed": 424242,
+    "reward": 34.0,
+    "turns": 14,
+    "goal": {
+      "inform_slots": {
+        "dst_city": "Maceio"
+      },
+      "request_slots": {
+        "name": "UNK",
+        "price": "UNK",
+        "gst_rating": "UNK"
+      }
+    },
+    "history": [
+      {
+        "turn": 1,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {
+          "dst_city": "Maceio"
+        },
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "name": "Royal Cavern"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 2,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "gst_rating": "8.4"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 3,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "dst_city": "Maceio",
+          "name": "Royal Cavern",
+          "gst_rating": "8.4",
+          "taskcomplete": "Match Available"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 4,
+        "speaker": "user",
+        "diaact": "thanks",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "category": "3.5 star hotel"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 5,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "price": "767.83"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 6,
+        "speaker": "user",
+        "diaact": "thanks",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "category": "3.5 star hotel"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 7,
+        "speaker": "user",
+        "diaact": "thanks",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "diaact": "thanks",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      }
+    ]
+  },
+  "fail_case": {
+    "seed": 424256,
+    "reward": -30.0,
+    "turns": 22,
+    "goal": {
+      "inform_slots": {
+        "dst_city": "Minneapolis",
+        "budget_range": "luxury"
+      },
+      "request_slots": {
+        "name": "UNK",
+        "price": "UNK",
+        "gst_rating": "UNK"
+      }
+    },
+    "history": [
+      {
+        "turn": 1,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {
+          "dst_city": "Minneapolis"
+        },
+        "request_slots": {
+          "gst_rating": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "name": "Antique Mantle"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 2,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "gst_rating": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "gst_rating": "7.2"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 3,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "dst_city": "Minneapolis",
+          "name": "Antique Mantle",
+          "gst_rating": "7.2",
+          "taskcomplete": "Match Available"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 4,
+        "speaker": "user",
+        "diaact": "deny",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "category": "2.5 star hotel"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 5,
+        "speaker": "user",
+        "diaact": "inform",
+        "inform_slots": {
+          "budget_range": "luxury"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "diaact": "sorry",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 6,
+        "speaker": "user",
+        "diaact": "inform",
+        "inform_slots": {
+          "budget_range": "I do not care"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "gst_rating": "7.2"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 7,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "budget_range": "budget"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 8,
+        "speaker": "user",
+        "diaact": "inform",
+        "inform_slots": {
+          "budget_range": "luxury"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 8,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "gst_rating": "NO VALUE MATCHES!!!"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 9,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 9,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 10,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 10,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 11,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "price": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 11,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      }
+    ]
+  }
+}

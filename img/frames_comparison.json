@@ -1,0 +1,6165 @@
+{
+  "candidates": [
+    {
+      "rank": 1,
+      "seed": 424242,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Maceio"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Maceio"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Royal Cavern"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.4"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Maceio",
+            "name": "Royal Cavern",
+            "gst_rating": "8.4",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "767.83"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Maceio"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Royal Cavern"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.4"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Maceio",
+            "name": "Royal Cavern",
+            "gst_rating": "8.4",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "767.83"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 2,
+      "seed": 424255,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Brasilia"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Brasilia"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Atlantic Gem"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "0"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Brasilia",
+            "name": "Atlantic Gem",
+            "gst_rating": "0",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "144.21"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Brasilia"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Atlantic Gem"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "0"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Brasilia",
+            "name": "Atlantic Gem",
+            "gst_rating": "0",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "144.21"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 3,
+      "seed": 424268,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Rome"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Rome"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Secret Bay"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "0"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Rome",
+            "name": "Secret Bay",
+            "gst_rating": "0",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "0.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "156.54"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "0.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Rome"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Secret Bay"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "0"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Rome",
+            "name": "Secret Bay",
+            "gst_rating": "0",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "0.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "156.54"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "0.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 4,
+      "seed": 424281,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Seattle"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Seattle"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "The Emerald"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Seattle",
+            "name": "The Emerald",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "5.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "1001.91"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "5.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Seattle"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "The Emerald"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Seattle",
+            "name": "The Emerald",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "5.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "1001.91"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "5.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 5,
+      "seed": 424294,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Marseille"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Marseille"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Grand Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Marseille",
+            "name": "Grand Hotel",
+            "gst_rating": "8.7",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "739.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Marseille"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Grand Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Marseille",
+            "name": "Grand Hotel",
+            "gst_rating": "8.7",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "739.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 6,
+      "seed": 424307,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "San Juan"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "San Juan"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Supreme Seaside Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "0"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "San Juan",
+            "name": "Supreme Seaside Inn & Suites",
+            "gst_rating": "0",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "103.48"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "San Juan"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Supreme Seaside Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "0"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "San Juan",
+            "name": "Supreme Seaside Inn & Suites",
+            "gst_rating": "0",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "103.48"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 7,
+      "seed": 424320,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Minneapolis"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Minneapolis"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Antique Mantle"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "7.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Minneapolis",
+            "name": "Antique Mantle",
+            "gst_rating": "7.2",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "419.98"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Minneapolis"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Antique Mantle"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "7.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Minneapolis",
+            "name": "Antique Mantle",
+            "gst_rating": "7.2",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "419.98"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 8,
+      "seed": 424333,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Buenos Aires"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Buenos Aires"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Market Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Buenos Aires",
+            "name": "Olive Market Hotel",
+            "gst_rating": "8.7",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "512.97"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Buenos Aires"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Market Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Buenos Aires",
+            "name": "Olive Market Hotel",
+            "gst_rating": "8.7",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "512.97"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 9,
+      "seed": 424346,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Kobe"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Kobe"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Resort Ancient Angel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Kobe",
+            "name": "Resort Ancient Angel",
+            "gst_rating": "8.7",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "624.6"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Kobe"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Resort Ancient Angel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.7"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Kobe",
+            "name": "Resort Ancient Angel",
+            "gst_rating": "8.7",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "624.6"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 10,
+      "seed": 424359,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Porto Alegre"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Porto Alegre"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Breakwater Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Porto Alegre",
+            "name": "Breakwater Hotel",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "637.79"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Porto Alegre"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Breakwater Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Porto Alegre",
+            "name": "Breakwater Hotel",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "637.79"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 11,
+      "seed": 424372,
+      "reward": -26.0,
+      "turns": 14,
+      "success": false,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Pittsburgh",
+          "n_adults": "4"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "n_adults": "4"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "sorry",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "n_adults": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Punta Cana"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Pittsburgh"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Bazaar Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "budget"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Bazaar Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "n_adults": "4"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "sorry",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "n_adults": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Punta Cana"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Pittsburgh"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Bazaar Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "budget"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Bazaar Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": -26.0,
+      "k0_turns": 14,
+      "k5_reward": -26.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 12,
+      "seed": 424385,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Guadalajara"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Guadalajara"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Resort Felicity"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.5"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Guadalajara",
+            "name": "Resort Felicity",
+            "gst_rating": "8.5",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "501.19"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Guadalajara"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Resort Felicity"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.5"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Guadalajara",
+            "name": "Resort Felicity",
+            "gst_rating": "8.5",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "501.19"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 13,
+      "seed": 424398,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Dublin"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Dublin"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Mellow Dream Inn"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "5.1"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Dublin",
+            "name": "Mellow Dream Inn",
+            "gst_rating": "5.1",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "379.31"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Dublin"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Mellow Dream Inn"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "5.1"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Dublin",
+            "name": "Mellow Dream Inn",
+            "gst_rating": "5.1",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "379.31"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 14,
+      "seed": 424411,
+      "reward": -30.0,
+      "turns": 22,
+      "success": false,
+      "goal": {
+        "inform_slots": {
+          "budget_range": "luxury",
+          "dst_city": "Houston"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Houston"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Elton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "6.4"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "luxury"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "sorry",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Houston",
+            "name": "Elton",
+            "gst_rating": "6.4",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "6.4"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "budget"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "luxury"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "NO VALUE MATCHES!!!"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "confirm_question",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "agent",
+          "diaact": "confirm_question",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 11,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 11,
+          "speaker": "agent",
+          "diaact": "confirm_question",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Houston"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Elton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "6.4"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "luxury"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "sorry",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Houston",
+            "name": "Elton",
+            "gst_rating": "6.4",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "6.4"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "budget"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "budget_range": "luxury"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "NO VALUE MATCHES!!!"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "confirm_question",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "agent",
+          "diaact": "confirm_question",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 11,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 11,
+          "speaker": "agent",
+          "diaact": "confirm_question",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": -30.0,
+      "k0_turns": 22,
+      "k5_reward": -30.0,
+      "k5_turns": 22
+    },
+    {
+      "rank": 15,
+      "seed": 424424,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Dublin"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Dublin"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Mellow Dream Inn"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "5.1"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Dublin",
+            "name": "Mellow Dream Inn",
+            "gst_rating": "5.1",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "379.31"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Dublin"
+          },
+          "request_slots": {
+            "name": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Mellow Dream Inn"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "5.1"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Dublin",
+            "name": "Mellow Dream Inn",
+            "gst_rating": "5.1",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "379.31"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 16,
+      "seed": 424437,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Porto Alegre"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Porto Alegre"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Breakwater Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Porto Alegre",
+            "name": "Breakwater Hotel",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "637.79"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Porto Alegre"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Breakwater Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Porto Alegre",
+            "name": "Breakwater Hotel",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "637.79"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 17,
+      "seed": 424450,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Pittsburgh"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Pittsburgh"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Bazaar Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Pittsburgh",
+            "name": "Olive Bazaar Inn & Suites",
+            "gst_rating": "8.2",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "332.48"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Pittsburgh"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Olive Bazaar Inn & Suites"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Pittsburgh",
+            "name": "Olive Bazaar Inn & Suites",
+            "gst_rating": "8.2",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "332.48"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "2.5 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 18,
+      "seed": 424463,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Mexico City"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Mexico City"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Sublime Echo"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "6.9"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Mexico City",
+            "name": "Sublime Echo",
+            "gst_rating": "6.9",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "432.15"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Mexico City"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Sublime Echo"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "6.9"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Mexico City",
+            "name": "Sublime Echo",
+            "gst_rating": "6.9",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "432.15"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "3.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 19,
+      "seed": 424476,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Recife"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Recife"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "The Glee"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Recife",
+            "name": "The Glee",
+            "gst_rating": "8.2",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "455.6"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Recife"
+          },
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "The Glee"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.2"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Recife",
+            "name": "The Glee",
+            "gst_rating": "8.2",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "455.6"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    },
+    {
+      "rank": 20,
+      "seed": 424489,
+      "reward": 34.0,
+      "turns": 14,
+      "success": true,
+      "goal": {
+        "inform_slots": {
+          "dst_city": "Monterrey"
+        },
+        "request_slots": {
+          "name": "UNK",
+          "price": "UNK",
+          "gst_rating": "UNK"
+        }
+      },
+      "history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Monterrey"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Oriental Peaks Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Monterrey",
+            "name": "Oriental Peaks Hotel",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "610.69"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "dst_city": "Monterrey"
+          },
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "name": "Oriental Peaks Hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "gst_rating": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "gst_rating": "8.8"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "dst_city": "Monterrey",
+            "name": "Oriental Peaks Hotel",
+            "gst_rating": "8.8",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "price": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "price": "610.69"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "category": "4.0 star hotel"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [],
+      "k0_reward": 34.0,
+      "k0_turns": 14,
+      "k5_reward": 34.0,
+      "k5_turns": 14
+    }
+  ],
+  "candidate_pool_size": 20
+}

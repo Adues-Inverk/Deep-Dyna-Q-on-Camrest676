@@ -1,0 +1,223 @@
+{
+  "candidate_pool_size": 50,
+  "success_count": 1,
+  "fail_count": 1,
+  "success_case": null,
+  "fail_case": {
+    "seed": 424242,
+    "reward": -30.0,
+    "turns": 22,
+    "goal": {
+      "inform_slots": {
+        "dst_city": "Maceio"
+      },
+      "request_slots": {
+        "name": "UNK",
+        "price": "UNK",
+        "gst_rating": "UNK"
+      }
+    },
+    "history": [
+      {
+        "turn": 1,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {
+          "dst_city": "Maceio"
+        },
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 2,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 3,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 4,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 5,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 6,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 7,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 8,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 8,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 9,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 9,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 10,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 10,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 11,
+        "speaker": "user",
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "name": "UNK"
+        },
+        "nl": ""
+      },
+      {
+        "turn": 11,
+        "speaker": "agent",
+        "diaact": "confirm_question",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CS106 · Deep Dyna-Q on CamRest676</title>
+  <link rel="stylesheet" href="./styles.css?v=1" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow">CS106 Project Dashboard</p>
+        <h1>Deep Dyna-Q on CamRest676</h1>
+        <p class="lede">
+          Compare k=0 (pure DQN baseline) vs k=5 (Dyna-Q with world-model planning)
+          on the CamRest676 restaurant-booking task. Explore training curves,
+          summary metrics, and live dialogue transcripts.
+        </p>
+      </div>
+      <div class="hero-status">
+        <div class="status-card">
+          <span class="status-label">Mode</span>
+          <strong id="modeLabel">Comparison</strong>
+        </div>
+        <div class="status-card">
+          <span class="status-label">Source</span>
+          <strong id="sourceLabel">Ready</strong>
+        </div>
+        <a class="status-card" href="/web/frames.html" style="text-decoration:none;cursor:pointer;">
+          <span class="status-label">Switch domain</span>
+          <strong style="color:var(--accent-2)">→ Frames (Hotels)</strong>
+        </a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel sidebar">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow small">Load View</p>
+            <h2>Choose a mode</h2>
+          </div>
+        </div>
+
+        <div class="button-stack">
+          <button class="mode-btn active" id="btnComparison" type="button">Load comparison</button>
+          <button class="mode-btn" id="btnK0" type="button">Load k=0 (pure DQN)</button>
+          <button class="mode-btn" id="btnK5" type="button">Load k=5 (Dyna-Q)</button>
+        </div>
+
+        <div class="note-box">
+          <p>Comparison mode loads:</p>
+          <ul>
+            <li>k=0 and k=5 performance JSON</li>
+            <li>Side-by-side dialogue for the same goal</li>
+          </ul>
+          <p style="margin-top:12px">k=0 mode loads:</p>
+          <ul>
+            <li>k=0 performance JSON</li>
+            <li>One success case and one fail case</li>
+          </ul>
+          <p style="margin-top:12px">k=5 mode loads:</p>
+          <ul>
+            <li>k=5 (Dyna-Q) performance JSON only</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="content">
+        <section class="panel plots-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow small">Plots</p>
+              <h2>Training curves</h2>
+            </div>
+            <div class="legend">
+              <span class="legend-item"><i class="swatch k0"></i>k=0 (DQN)</span>
+              <span class="legend-item"><i class="swatch k5"></i>k=5 (Dyna-Q)</span>
+            </div>
+          </div>
+          <div id="plotsRoot" class="plots-root"></div>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow small">Results</p>
+              <h2 id="tableTitle">Comparison table</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="resultsTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel dialogue-panel" id="dialoguePanel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow small">Dialogue</p>
+              <h2 id="dialogueTitle">Sample conversation</h2>
+            </div>
+          </div>
+          <div id="dialogueMeta" class="dialogue-meta"></div>
+          <div class="dialogue-grid">
+            <div class="dialogue-column" id="leftDialogueColumn">
+              <h3 id="leftDialogueTitle">k=0 (DQN)</h3>
+              <div id="k0Transcript" class="transcript"></div>
+            </div>
+            <div class="dialogue-column" id="rightDialogueColumn">
+              <h3 id="rightDialogueTitle">k=5 (Dyna-Q)</h3>
+              <div id="k5Transcript" class="transcript"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <template id="turnTemplate">
+    <article class="turn-card">
+      <div class="turn-head">
+        <span class="turn-index"></span>
+        <span class="turn-speaker"></span>
+      </div>
+      <div class="turn-body"></div>
+    </article>
+  </template>
+
+  <script src="./app.js?v=1"></script>
+</body>
+</html>

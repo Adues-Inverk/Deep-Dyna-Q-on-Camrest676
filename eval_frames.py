@@ -31,6 +31,7 @@ from deep_dialog import dialog_config
 from deep_dialog.dialog_system import DialogManager, text_to_dict
 from deep_dialog.nlg import nlg
 from deep_dialog.nlu import nlu
+from deep_dialog.agents import AgentDQN
 from deep_dialog.usersims import ModelBasedSimulator, FramesRuleSimulator
 
 
@@ -83,9 +84,6 @@ def main():
         print('Run training first:  python run_frames.py --episodes 300')
         return
     print(f'Loading checkpoint: {model_path}')
-    with open(model_path, 'rb') as f:
-        agent = pickle.load(f, encoding='latin1')
-    agent.predict_mode = True
 
     # ── Load data ─────────────────────────────────────────────────────────────
     all_goals       = load_pickle(args.goal_file_path)
@@ -101,6 +99,33 @@ def main():
 
     dialog_config.run_mode = 1
 
+    # ── Build agent with same hyperparams as training ─────────────────────────
+    agent_params = {
+        'max_turn':                    args.max_turn,
+        'epsilon':                     0.0,
+        'agent_run_mode':              1,
+        'agent_act_level':             0,
+        'experience_replay_pool_size': 10000,
+        'dqn_hidden_size':             256,
+        'batch_size':                  64,
+        'gamma':                       0.99,
+        'predict_mode':                True,
+        'trained_model_path':          None,
+        'warm_start':                  0,
+        'cmd_input_mode':              0,
+        'world_model_weight':          0.5,
+        'per_alpha':                   0.6,
+        'per_beta':                    0.4,
+        'target_tau':                  0.005,
+        'learning_rate':               0.001,
+        'min_epsilon':                 0.0,
+        'epsilon_decay':               1.0,
+    }
+    agent = AgentDQN(kb, act_set, slot_set, agent_params)
+    agent.load(model_path)
+    agent.predict_mode = True
+    print('Agent loaded.')
+
     usersim_params = {
         'max_turn': args.max_turn,
         'slot_err_probability': 0.0,
@@ -108,7 +133,7 @@ def main():
         'intent_err_probability': 0.0,
         'simulator_run_mode': 1,
         'simulator_act_level': 0,
-        'learning_phase': 'test',          # ← test goals only
+        'learning_phase': 'test',
         'hidden_size': 256,
         'experience_replay_pool_size': 1000,
     }
