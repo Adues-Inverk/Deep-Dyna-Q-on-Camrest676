@@ -51,21 +51,21 @@
       {
         "turn": 2,
         "speaker": "agent",
-        "diaact": "request",
-        "inform_slots": {},
-        "request_slots": {
-          "pricerange": "UNK"
+        "diaact": "inform",
+        "inform_slots": {
+          "pricerange": "moderate"
         },
+        "request_slots": {},
         "nl": ""
       },
       {
         "turn": 3,
         "speaker": "user",
-        "diaact": "inform",
-        "inform_slots": {
-          "pricerange": "I do not care"
+        "diaact": "request",
+        "inform_slots": {},
+        "request_slots": {
+          "address": "UNK"
         },
-        "request_slots": {},
         "nl": ""
       },
       {
@@ -159,17 +159,18 @@
     ]
   },
   "fail_case": {
-    "seed": 424263,
-    "reward": -28.0,
-    "turns": 18,
+    "seed": 424270,
+    "reward": -26.0,
+    "turns": 14,
     "goal": {
       "inform_slots": {
-        "food": "french",
-        "pricerange": "expensive"
+        "food": "italian",
+        "pricerange": "moderate",
+        "area": "west"
       },
       "request_slots": {
         "postcode": "UNK",
-        "phone": "UNK"
+        "address": "UNK"
       }
     },
     "history": [
@@ -178,10 +179,10 @@
         "speaker": "user",
         "diaact": "request",
         "inform_slots": {
-          "pricerange": "expensive"
+          "pricerange": "moderate"
         },
         "request_slots": {
-          "phone": "UNK"
+          "postcode": "UNK"
         },
         "nl": ""
       },
@@ -198,11 +199,11 @@
       {
         "turn": 2,
         "speaker": "user",
-        "diaact": "request",
-        "inform_slots": {},
-        "request_slots": {
-          "phone": "UNK"
+        "diaact": "inform",
+        "inform_slots": {
+          "area": "west"
         },
+        "request_slots": {},
         "nl": ""
       },
       {
@@ -220,7 +221,7 @@
         "speaker": "user",
         "diaact": "inform",
         "inform_slots": {
-          "food": "french"
+          "food": "italian"
         },
         "request_slots": {},
         "nl": ""
@@ -230,7 +231,7 @@
         "speaker": "agent",
         "diaact": "inform",
         "inform_slots": {
-          "pricerange": "expensive"
+          "address": "21 - 24 northampton road"
         },
         "request_slots": {},
         "nl": ""
@@ -250,7 +251,7 @@
         "speaker": "agent",
         "diaact": "inform",
         "inform_slots": {
-          "address": "bridge street city centre"
+          "phone": "01799 521260"
         },
         "request_slots": {},
         "nl": ""
@@ -270,78 +271,18 @@
         "speaker": "agent",
         "diaact": "inform",
         "inform_slots": {
-          "phone": "01223 311053"
-        },
-        "request_slots": {},
-        "nl": ""
-      },
-      {
-        "turn": 6,
-        "speaker": "user",
-        "diaact": "request",
-        "inform_slots": {},
-        "request_slots": {
-          "postcode": "UNK"
-        },
-        "nl": ""
-      },
-      {
-        "turn": 6,
-        "speaker": "agent",
-        "diaact": "inform",
-        "inform_slots": {
-          "phone": "01223 311053"
-        },
-        "request_slots": {},
-        "nl": ""
-      },
-      {
-        "turn": 7,
-        "speaker": "user",
-        "diaact": "request",
-        "inform_slots": {},
-        "request_slots": {
-          "postcode": "UNK"
-        },
-        "nl": ""
-      },
-      {
-        "turn": 7,
-        "speaker": "agent",
-        "diaact": "inform",
-        "inform_slots": {
-          "phone": "01223 311053"
-        },
-        "request_slots": {},
-        "nl": ""
-      },
-      {
-        "turn": 8,
-        "speaker": "user",
-        "diaact": "request",
-        "inform_slots": {},
-        "request_slots": {
-          "postcode": "UNK"
-        },
-        "nl": ""
-      },
-      {
-        "turn": 8,
-        "speaker": "agent",
-        "diaact": "inform",
-        "inform_slots": {
-          "pricerange": "expensive",
-          "area": "centre",
-          "food": "french",
-          "address": "bridge street city centre",
-          "phone": "01223 311053",
+          "pricerange": "moderate",
+          "area": "west",
+          "food": "italian",
+          "address": "21 - 24 northampton road",
+          "phone": "01799 521260",
           "taskcomplete": "Match Available"
         },
         "request_slots": {},
         "nl": ""
       },
       {
-        "turn": 9,
+        "turn": 6,
         "speaker": "user",
         "diaact": "thanks",
         "inform_slots": {},
@@ -349,7 +290,30 @@
         "nl": ""
       },
       {
-        "turn": 9,
+        "turn": 6,
+        "speaker": "agent",
+        "diaact": "inform",
+        "inform_slots": {
+          "pricerange": "moderate",
+          "area": "west",
+          "food": "italian",
+          "address": "21 - 24 northampton road",
+          "phone": "01799 521260",
+          "taskcomplete": "Match Available"
+        },
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 7,
+        "speaker": "user",
+        "diaact": "thanks",
+        "inform_slots": {},
+        "request_slots": {},
+        "nl": ""
+      },
+      {
+        "turn": 7,
         "speaker": "agent",
         "diaact": "thanks",
         "inform_slots": {},

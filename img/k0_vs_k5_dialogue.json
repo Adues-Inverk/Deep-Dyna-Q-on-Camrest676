@@ -5,8 +5,8 @@
       "seed": 424242,
       "k0_reward": 34.0,
       "k0_turns": 14,
-      "k5_reward": 33.0,
-      "k5_turns": 16,
+      "k5_reward": 34.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "italian",
@@ -18,8 +18,8 @@
       },
       "ddq_reward": 34.0,
       "ddq_turns": 14,
-      "d3q_reward": 33.0,
-      "d3q_turns": 16,
+      "d3q_reward": 34.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -56,21 +56,21 @@
         {
           "turn": 2,
           "speaker": "agent",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "pricerange": "UNK"
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "moderate"
           },
+          "request_slots": {},
           "nl": ""
         },
         {
           "turn": 3,
           "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "I do not care"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "address": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
@@ -178,11 +178,11 @@
         {
           "turn": 1,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
@@ -236,18 +236,20 @@
         {
           "turn": 4,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "name": "pizza hut fen ditton"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
           "turn": 5,
           "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "italian"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -256,7 +258,11 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "phone": "01223 323737"
+            "area": "east",
+            "food": "italian",
+            "pricerange": "moderate",
+            "address": "cambridge retail park newmarket road fen ditton",
+            "taskcomplete": "Match Available"
           },
           "request_slots": {},
           "nl": ""
@@ -278,8 +284,6 @@
             "food": "italian",
             "pricerange": "moderate",
             "address": "cambridge retail park newmarket road fen ditton",
-            "name": "pizza hut fen ditton",
-            "phone": "01223 323737",
             "taskcomplete": "Match Available"
           },
           "request_slots": {},
@@ -295,30 +299,6 @@
         },
         {
           "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "east",
-            "food": "italian",
-            "pricerange": "moderate",
-            "address": "cambridge retail park newmarket road fen ditton",
-            "name": "pizza hut fen ditton",
-            "phone": "01223 323737",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -330,8 +310,8 @@
     {
       "rank": 2,
       "seed": 424259,
-      "k0_reward": -27.0,
-      "k0_turns": 16,
+      "k0_reward": -29.0,
+      "k0_turns": 20,
       "k5_reward": -29.0,
       "k5_turns": 20,
       "goal": {
@@ -344,8 +324,8 @@
           "phone": "UNK"
         }
       },
-      "ddq_reward": -27.0,
-      "ddq_turns": 16,
+      "ddq_reward": -29.0,
+      "ddq_turns": 20,
       "d3q_reward": -29.0,
       "d3q_turns": 20,
       "ddq_history": [
@@ -486,7 +466,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "postcode": "c.b 5, 8 p.a"
+            "phone": "01223 248882"
           },
           "request_slots": {},
           "nl": ""
@@ -501,6 +481,46 @@
         },
         {
           "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive",
+            "area": "east",
+            "address": "529 newmarket road fen ditton",
+            "phone": "01223 248882",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 248882"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -544,11 +564,11 @@
         {
           "turn": 2,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
@@ -564,6 +584,22 @@
         {
           "turn": 3,
           "speaker": "agent",
+          "diaact": "confirm_question",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
             "address": "529 newmarket road fen ditton"
@@ -572,7 +608,7 @@
           "nl": ""
         },
         {
-          "turn": 4,
+          "turn": 5,
           "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
@@ -582,29 +618,11 @@
           "nl": ""
         },
         {
-          "turn": 4,
+          "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
             "phone": "01223 248882"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "name": "yu garden"
           },
           "request_slots": {},
           "nl": ""
@@ -626,7 +644,6 @@
             "area": "east",
             "address": "529 newmarket road fen ditton",
             "phone": "01223 248882",
-            "name": "yu garden",
             "taskcomplete": "Match Available"
           },
           "request_slots": {},
@@ -667,7 +684,6 @@
             "area": "east",
             "address": "529 newmarket road fen ditton",
             "phone": "01223 248882",
-            "name": "yu garden",
             "taskcomplete": "Match Available",
             "postcode": "c.b 5, 8 p.a"
           },
@@ -685,18 +701,20 @@
         {
           "turn": 9,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 5, 8 p.a"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
           "turn": 10,
           "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -713,10 +731,10 @@
     {
       "rank": 3,
       "seed": 424276,
-      "k0_reward": -28.0,
-      "k0_turns": 18,
-      "k5_reward": -25.0,
-      "k5_turns": 12,
+      "k0_reward": -29.0,
+      "k0_turns": 20,
+      "k5_reward": -29.0,
+      "k5_turns": 20,
       "goal": {
         "inform_slots": {
           "pricerange": "expensive",
@@ -727,11 +745,211 @@
           "phone": "UNK"
         }
       },
-      "ddq_reward": -28.0,
-      "ddq_turns": 18,
-      "d3q_reward": -25.0,
-      "d3q_turns": 12,
+      "ddq_reward": -29.0,
+      "ddq_turns": 20,
+      "d3q_reward": -29.0,
+      "d3q_turns": 20,
       "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "area": "east"
+          },
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "pricerange": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "529 newmarket road fen ditton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 248882"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "east",
+            "pricerange": "expensive",
+            "address": "529 newmarket road fen ditton",
+            "phone": "01223 248882",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 248882"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "east",
+            "pricerange": "expensive",
+            "address": "529 newmarket road fen ditton",
+            "phone": "01223 248882",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 248882"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [
         {
           "turn": 1,
           "speaker": "user",
@@ -767,21 +985,21 @@
         {
           "turn": 2,
           "speaker": "agent",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "pricerange": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
             "pricerange": "expensive"
           },
           "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
           "nl": ""
         },
         {
@@ -849,7 +1067,11 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "postcode": "c.b 5, 8 p.a"
+            "area": "east",
+            "pricerange": "expensive",
+            "address": "529 newmarket road fen ditton",
+            "phone": "01223 248882",
+            "taskcomplete": "Match Available"
           },
           "request_slots": {},
           "nl": ""
@@ -857,13 +1079,31 @@
         {
           "turn": 7,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "deny",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "postcode": "c.b 5, 8 p.a"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -878,7 +1118,7 @@
           "nl": ""
         },
         {
-          "turn": 8,
+          "turn": 9,
           "speaker": "user",
           "diaact": "deny",
           "inform_slots": {},
@@ -886,147 +1126,27 @@
           "nl": ""
         },
         {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 5, 8 p.a"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 9,
           "speaker": "agent",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        }
-      ],
-      "d3q_history": [
-        {
-          "turn": 1,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {
-            "area": "east"
-          },
-          "request_slots": {
-            "phone": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 1,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "address": "finders corner newmarket road"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "phone": "UNK"
+            "food": "UNK"
           },
           "nl": ""
         },
         {
-          "turn": 5,
-          "speaker": "agent",
+          "turn": 10,
+          "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
-            "area": "east",
-            "address": "finders corner newmarket road",
-            "taskcomplete": "Match Available"
+            "food": "I do not care"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 6,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
+          "turn": 10,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -1038,10 +1158,10 @@
     {
       "rank": 4,
       "seed": 424293,
-      "k0_reward": 34.0,
+      "k0_reward": -26.0,
       "k0_turns": 14,
-      "k5_reward": 32.0,
-      "k5_turns": 18,
+      "k5_reward": 34.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "chinese",
@@ -1053,10 +1173,10 @@
           "address": "UNK"
         }
       },
-      "ddq_reward": 34.0,
+      "ddq_reward": -26.0,
       "ddq_turns": 14,
-      "d3q_reward": 32.0,
-      "d3q_turns": 18,
+      "d3q_reward": 34.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -1075,13 +1195,32 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "centre"
+            "food": "chinese",
+            "taskcomplete": "Match Available"
           },
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 2,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "centre"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
           "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
@@ -1091,31 +1230,11 @@
           "nl": ""
         },
         {
-          "turn": 2,
-          "speaker": "agent",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "pricerange": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 3,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "529 newmarket road fen ditton"
+            "pricerange": "expensive"
           },
           "request_slots": {},
           "nl": ""
@@ -1135,7 +1254,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "phone": "01223 248882"
+            "address": "529 newmarket road fen ditton"
           },
           "request_slots": {},
           "nl": ""
@@ -1146,7 +1265,7 @@
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "postcode": "UNK"
+            "phone": "UNK"
           },
           "nl": ""
         },
@@ -1155,11 +1274,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "chinese",
-            "area": "east",
-            "address": "529 newmarket road fen ditton",
-            "phone": "01223 248882",
-            "taskcomplete": "Match Available"
+            "phone": "01223 248882"
           },
           "request_slots": {},
           "nl": ""
@@ -1167,9 +1282,11 @@
         {
           "turn": 6,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "request",
           "inform_slots": {},
-          "request_slots": {},
+          "request_slots": {
+            "postcode": "UNK"
+          },
           "nl": ""
         },
         {
@@ -1177,7 +1294,12 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "postcode": "c.b 5, 8 p.a"
+            "food": "chinese",
+            "taskcomplete": "Match Available",
+            "area": "east",
+            "pricerange": "expensive",
+            "address": "529 newmarket road fen ditton",
+            "phone": "01223 248882"
           },
           "request_slots": {},
           "nl": ""
@@ -1235,8 +1357,10 @@
         {
           "turn": 2,
           "speaker": "agent",
-          "diaact": "confirm_answer",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -1295,7 +1419,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "name": "yu garden"
+            "postcode": "c.b 5, 8 p.a"
           },
           "request_slots": {},
           "nl": ""
@@ -1303,11 +1427,9 @@
         {
           "turn": 6,
           "speaker": "user",
-          "diaact": "request",
+          "diaact": "thanks",
           "inform_slots": {},
-          "request_slots": {
-            "postcode": "UNK"
-          },
+          "request_slots": {},
           "nl": ""
         },
         {
@@ -1317,9 +1439,10 @@
           "inform_slots": {
             "food": "chinese",
             "area": "east",
+            "pricerange": "expensive",
             "address": "529 newmarket road fen ditton",
             "phone": "01223 248882",
-            "name": "yu garden",
+            "postcode": "c.b 5, 8 p.a",
             "taskcomplete": "Match Available"
           },
           "request_slots": {},
@@ -1335,42 +1458,6 @@
         },
         {
           "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 5, 8 p.a"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 5, 8 p.a"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -1382,10 +1469,10 @@
     {
       "rank": 5,
       "seed": 424310,
-      "k0_reward": 34.0,
-      "k0_turns": 14,
-      "k5_reward": 33.0,
-      "k5_turns": 16,
+      "k0_reward": 33.0,
+      "k0_turns": 16,
+      "k5_reward": 34.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "vietnamese"
@@ -1395,10 +1482,10 @@
           "address": "UNK"
         }
       },
-      "ddq_reward": 34.0,
-      "ddq_turns": 14,
-      "d3q_reward": 33.0,
-      "d3q_turns": 16,
+      "ddq_reward": 33.0,
+      "ddq_turns": 16,
+      "d3q_reward": 34.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -1437,7 +1524,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "pricerange": "cheap"
+            "area": "west"
           },
           "request_slots": {},
           "nl": ""
@@ -1457,7 +1544,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "17 magdalene street city centre"
+            "pricerange": "cheap"
           },
           "request_slots": {},
           "nl": ""
@@ -1468,12 +1555,32 @@
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "phone": "UNK"
+            "address": "UNK"
           },
           "nl": ""
         },
         {
           "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "17 magdalene street city centre"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -1483,29 +1590,6 @@
           "nl": ""
         },
         {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "vietnamese",
-            "area": "west",
-            "pricerange": "cheap",
-            "address": "17 magdalene street city centre",
-            "phone": "01223 362456",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 6,
           "speaker": "user",
           "diaact": "thanks",
@@ -1518,12 +1602,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "vietnamese",
-            "area": "west",
-            "pricerange": "cheap",
-            "address": "17 magdalene street city centre",
-            "phone": "01223 362456",
-            "taskcomplete": "Match Available"
+            "address": "17 magdalene street city centre"
           },
           "request_slots": {},
           "nl": ""
@@ -1538,6 +1617,29 @@
         },
         {
           "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "vietnamese",
+            "area": "west",
+            "pricerange": "cheap",
+            "address": "17 magdalene street city centre",
+            "phone": "01223 362456",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -1561,10 +1663,8 @@
         {
           "turn": 1,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "west"
-          },
+          "diaact": "confirm_answer",
+          "inform_slots": {},
           "request_slots": {},
           "nl": ""
         },
@@ -1580,6 +1680,26 @@
         },
         {
           "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "west"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "address": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -1589,7 +1709,7 @@
           "nl": ""
         },
         {
-          "turn": 3,
+          "turn": 4,
           "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
@@ -1599,7 +1719,7 @@
           "nl": ""
         },
         {
-          "turn": 3,
+          "turn": 4,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -1609,7 +1729,7 @@
           "nl": ""
         },
         {
-          "turn": 4,
+          "turn": 5,
           "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
@@ -1619,7 +1739,7 @@
           "nl": ""
         },
         {
-          "turn": 4,
+          "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -1629,24 +1749,6 @@
           "nl": ""
         },
         {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "name": "thanh binh"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 6,
           "speaker": "user",
           "diaact": "thanks",
@@ -1664,7 +1766,6 @@
             "pricerange": "cheap",
             "address": "17 magdalene street city centre",
             "phone": "01223 362456",
-            "name": "thanh binh",
             "taskcomplete": "Match Available"
           },
           "request_slots": {},
@@ -1680,30 +1781,6 @@
         },
         {
           "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "vietnamese",
-            "area": "west",
-            "pricerange": "cheap",
-            "address": "17 magdalene street city centre",
-            "phone": "01223 362456",
-            "name": "thanh binh",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -1715,10 +1792,10 @@
     {
       "rank": 6,
       "seed": 424327,
-      "k0_reward": -28.0,
-      "k0_turns": 18,
-      "k5_reward": -25.0,
-      "k5_turns": 12,
+      "k0_reward": -29.0,
+      "k0_turns": 20,
+      "k5_reward": -29.0,
+      "k5_turns": 20,
       "goal": {
         "inform_slots": {
           "area": "south",
@@ -1730,10 +1807,10 @@
           "address": "UNK"
         }
       },
-      "ddq_reward": -28.0,
-      "ddq_turns": 18,
-      "d3q_reward": -25.0,
-      "d3q_turns": 12,
+      "ddq_reward": -29.0,
+      "ddq_turns": 20,
+      "d3q_reward": -29.0,
+      "d3q_turns": 20,
       "ddq_history": [
         {
           "turn": 1,
@@ -1792,7 +1869,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "g4 cambridge leisure park clifton way cherry hinton"
+            "area": "south"
           },
           "request_slots": {},
           "nl": ""
@@ -1803,12 +1880,32 @@
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "phone": "UNK"
+            "address": "UNK"
           },
           "nl": ""
         },
         {
           "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "g4 cambridge leisure park clifton way cherry hinton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -1818,31 +1915,9 @@
           "nl": ""
         },
         {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "south",
-            "pricerange": "moderate",
-            "address": "g4 cambridge leisure park clifton way cherry hinton",
-            "phone": "01223 323737",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 6,
           "speaker": "user",
-          "diaact": "deny",
+          "diaact": "thanks",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
@@ -1874,7 +1949,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "postcode": "c.b 1, 7 d.y"
+            "phone": "01223 323737"
           },
           "request_slots": {},
           "nl": ""
@@ -1896,8 +1971,7 @@
             "pricerange": "moderate",
             "address": "g4 cambridge leisure park clifton way cherry hinton",
             "phone": "01223 323737",
-            "taskcomplete": "Match Available",
-            "postcode": "c.b 1, 7 d.y"
+            "taskcomplete": "Match Available"
           },
           "request_slots": {},
           "nl": ""
@@ -1912,6 +1986,24 @@
         },
         {
           "turn": 9,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 323737"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -1957,7 +2049,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "chinese"
+            "pricerange": "expensive"
           },
           "request_slots": {},
           "nl": ""
@@ -1967,7 +2059,7 @@
           "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
-            "food": "I do not care"
+            "pricerange": "moderate"
           },
           "request_slots": {},
           "nl": ""
@@ -1975,11 +2067,11 @@
         {
           "turn": 3,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "chinese"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
@@ -1997,7 +2089,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "cambridge leisure park clifton way cherry hinton"
+            "address": "g4 cambridge leisure park clifton way cherry hinton"
           },
           "request_slots": {},
           "nl": ""
@@ -2017,9 +2109,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "south",
-            "address": "cambridge leisure park clifton way cherry hinton",
-            "taskcomplete": "Match Available"
+            "phone": "01223 323737"
           },
           "request_slots": {},
           "nl": ""
@@ -2027,13 +2117,96 @@
         {
           "turn": 6,
           "speaker": "user",
-          "diaact": "deny",
+          "diaact": "thanks",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south",
+            "pricerange": "moderate",
+            "address": "g4 cambridge leisure park clifton way cherry hinton",
+            "phone": "01223 323737",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "postcode": "c.b 1, 7 d.y"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south",
+            "pricerange": "moderate",
+            "address": "g4 cambridge leisure park clifton way cherry hinton",
+            "phone": "01223 323737",
+            "taskcomplete": "Match Available",
+            "postcode": "c.b 1, 7 d.y"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -2045,10 +2218,10 @@
     {
       "rank": 7,
       "seed": 424344,
-      "k0_reward": 34.0,
-      "k0_turns": 14,
-      "k5_reward": 31.0,
-      "k5_turns": 20,
+      "k0_reward": 35.0,
+      "k0_turns": 12,
+      "k5_reward": 34.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "french",
@@ -2059,10 +2232,10 @@
           "address": "UNK"
         }
       },
-      "ddq_reward": 34.0,
-      "ddq_turns": 14,
-      "d3q_reward": 31.0,
-      "d3q_turns": 20,
+      "ddq_reward": 35.0,
+      "ddq_turns": 12,
+      "d3q_reward": 34.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -2099,21 +2272,21 @@
         {
           "turn": 2,
           "speaker": "agent",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "pricerange": "UNK"
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
           },
+          "request_slots": {},
           "nl": ""
         },
         {
           "turn": 3,
           "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "I do not care"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "address": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
@@ -2161,6 +2334,7 @@
           "inform_slots": {
             "area": "centre",
             "food": "french",
+            "pricerange": "expensive",
             "address": "bridge street city centre",
             "phone": "01223 311053",
             "taskcomplete": "Match Available"
@@ -2178,28 +2352,6 @@
         },
         {
           "turn": 6,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "centre",
-            "food": "french",
-            "address": "bridge street city centre",
-            "phone": "01223 311053",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -2223,11 +2375,11 @@
         {
           "turn": 1,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "chinese"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
@@ -2263,10 +2415,8 @@
         {
           "turn": 3,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "phone": "01223 311053"
-          },
+          "diaact": "confirm_question",
+          "inform_slots": {},
           "request_slots": {},
           "nl": ""
         },
@@ -2293,9 +2443,11 @@
         {
           "turn": 5,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "request",
           "inform_slots": {},
-          "request_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
           "nl": ""
         },
         {
@@ -2303,7 +2455,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "centre"
+            "phone": "01223 311053"
           },
           "request_slots": {},
           "nl": ""
@@ -2318,39 +2470,21 @@
         },
         {
           "turn": 6,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "centre"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
             "area": "centre",
             "food": "french",
             "pricerange": "expensive",
-            "phone": "01223 311053",
             "address": "bridge street city centre",
+            "phone": "01223 311053",
             "taskcomplete": "Match Available"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 8,
+          "turn": 7,
           "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
@@ -2358,49 +2492,7 @@
           "nl": ""
         },
         {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 2, 1 u.f"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "centre",
-            "food": "french",
-            "pricerange": "expensive",
-            "phone": "01223 311053",
-            "address": "bridge street city centre",
-            "taskcomplete": "Match Available",
-            "postcode": "c.b 2, 1 u.f"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 10,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 10,
+          "turn": 7,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -2412,10 +2504,10 @@
     {
       "rank": 8,
       "seed": 424361,
-      "k0_reward": 34.0,
-      "k0_turns": 14,
-      "k5_reward": 33.0,
-      "k5_turns": 16,
+      "k0_reward": 33.0,
+      "k0_turns": 16,
+      "k5_reward": 34.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "indian",
@@ -2426,10 +2518,10 @@
           "address": "UNK"
         }
       },
-      "ddq_reward": 34.0,
-      "ddq_turns": 14,
-      "d3q_reward": 33.0,
-      "d3q_turns": 16,
+      "ddq_reward": 33.0,
+      "ddq_turns": 16,
+      "d3q_reward": 34.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -2508,35 +2600,32 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
+            "address": "74 mill road city centre"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
             "phone": "01223 323639"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian",
-            "area": "centre",
-            "pricerange": "cheap",
-            "address": "74 mill road city centre",
-            "phone": "01223 323639",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 6,
           "speaker": "user",
           "diaact": "thanks",
@@ -2549,12 +2638,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "indian",
-            "area": "centre",
-            "pricerange": "cheap",
-            "address": "74 mill road city centre",
-            "phone": "01223 323639",
-            "taskcomplete": "Match Available"
+            "address": "74 mill road city centre"
           },
           "request_slots": {},
           "nl": ""
@@ -2569,6 +2653,29 @@
         },
         {
           "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "indian",
+            "area": "centre",
+            "pricerange": "cheap",
+            "address": "74 mill road city centre",
+            "phone": "01223 323639",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -2632,21 +2739,21 @@
         {
           "turn": 3,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "phone": "01223 323639"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
           "turn": 4,
           "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "address": "UNK"
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "indian"
           },
+          "request_slots": {},
           "nl": ""
         },
         {
@@ -2662,9 +2769,11 @@
         {
           "turn": 5,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "request",
           "inform_slots": {},
-          "request_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
           "nl": ""
         },
         {
@@ -2672,7 +2781,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "centre"
+            "phone": "01223 323639"
           },
           "request_slots": {},
           "nl": ""
@@ -2687,39 +2796,21 @@
         },
         {
           "turn": 6,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "centre"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
             "food": "indian",
             "area": "centre",
             "pricerange": "cheap",
-            "phone": "01223 323639",
             "address": "74 mill road city centre",
+            "phone": "01223 323639",
             "taskcomplete": "Match Available"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 8,
+          "turn": 7,
           "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
@@ -2727,7 +2818,7 @@
           "nl": ""
         },
         {
-          "turn": 8,
+          "turn": 7,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -2741,8 +2832,8 @@
       "seed": 424378,
       "k0_reward": -28.0,
       "k0_turns": 18,
-      "k5_reward": -28.0,
-      "k5_turns": 18,
+      "k5_reward": -29.0,
+      "k5_turns": 20,
       "goal": {
         "inform_slots": {
           "pricerange": "cheap",
@@ -2756,9 +2847,189 @@
       },
       "ddq_reward": -28.0,
       "ddq_turns": 18,
-      "d3q_reward": -28.0,
-      "d3q_turns": 18,
+      "d3q_reward": -29.0,
+      "d3q_turns": 20,
       "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "pricerange": "cheap"
+          },
+          "request_slots": {
+            "address": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "centre"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "east"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "international"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "finders corner newmarket road"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "postcode": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "pricerange": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "cheap"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 812660"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "postcode": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "cheap",
+            "area": "east",
+            "address": "finders corner newmarket road",
+            "phone": "01223 812660",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 812660"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "postcode": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [
         {
           "turn": 1,
           "speaker": "user",
@@ -2816,33 +3087,13 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "pricerange": "cheap"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "address": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
             "address": "finders corner newmarket road"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 5,
+          "turn": 4,
           "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
@@ -2852,142 +3103,17 @@
           "nl": ""
         },
         {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
           "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "phone": "01223 812660"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "postcode": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 6,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "cheap",
-            "area": "east",
-            "address": "finders corner newmarket road",
-            "phone": "01223 812660",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 25, 9 a.q"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "cheap",
-            "area": "east",
-            "address": "finders corner newmarket road",
-            "phone": "01223 812660",
-            "taskcomplete": "Match Available",
-            "postcode": "c.b 25, 9 a.q"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "agent",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        }
-      ],
-      "d3q_history": [
-        {
-          "turn": 1,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {
-            "pricerange": "cheap"
-          },
-          "request_slots": {
-            "address": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 1,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "centre"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "east"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "international"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
           "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
@@ -2997,45 +3123,28 @@
           "nl": ""
         },
         {
-          "turn": 3,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "address": "finders corner newmarket road"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "postcode": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 25, 9 a.q"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "cheap",
+            "area": "east",
+            "address": "finders corner newmarket road",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "deny",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 5,
+          "turn": 6,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -3045,57 +3154,17 @@
           "nl": ""
         },
         {
-          "turn": 6,
+          "turn": 7,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "request",
           "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "name": "the missing sock"
+          "request_slots": {
+            "postcode": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
           "turn": 7,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "cheap",
-            "area": "east",
-            "address": "finders corner newmarket road",
-            "postcode": "c.b 25, 9 a.q",
-            "phone": "01223 812660",
-            "name": "the missing sock",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -3105,7 +3174,7 @@
           "nl": ""
         },
         {
-          "turn": 9,
+          "turn": 8,
           "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
@@ -3113,7 +3182,50 @@
           "nl": ""
         },
         {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "cheap",
+            "area": "east",
+            "address": "finders corner newmarket road",
+            "taskcomplete": "Match Available",
+            "phone": "01223 812660",
+            "postcode": "c.b 25, 9 a.q"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
           "turn": 9,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -3125,10 +3237,10 @@
     {
       "rank": 10,
       "seed": 424395,
-      "k0_reward": -27.0,
-      "k0_turns": 16,
-      "k5_reward": -28.0,
-      "k5_turns": 18,
+      "k0_reward": -29.0,
+      "k0_turns": 20,
+      "k5_reward": -26.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "asian oriental",
@@ -3140,10 +3252,10 @@
           "address": "UNK"
         }
       },
-      "ddq_reward": -27.0,
-      "ddq_turns": 16,
-      "d3q_reward": -28.0,
-      "d3q_turns": 18,
+      "ddq_reward": -29.0,
+      "ddq_turns": 20,
+      "d3q_reward": -26.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -3162,8 +3274,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "asian oriental",
-            "taskcomplete": "Match Available"
+            "area": "centre"
           },
           "request_slots": {},
           "nl": ""
@@ -3171,8 +3282,10 @@
         {
           "turn": 2,
           "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "north"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -3181,7 +3294,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "centre"
+            "pricerange": "expensive"
           },
           "request_slots": {},
           "nl": ""
@@ -3191,7 +3304,207 @@
           "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
+            "pricerange": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "169 high street chesterton chesterton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "169 high street chesterton chesterton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 356555"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "asian oriental"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "food": "asian oriental"
+          },
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "centre"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
             "area": "north"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "I do not care"
           },
           "request_slots": {},
           "nl": ""
@@ -3257,20 +3570,6 @@
         {
           "turn": 6,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "asian oriental",
-            "taskcomplete": "Match Available",
-            "area": "north",
-            "address": "169 high street chesterton chesterton",
-            "phone": "01223 356555"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "user",
           "diaact": "deny",
           "inform_slots": {},
           "request_slots": {},
@@ -3278,150 +3577,6 @@
         },
         {
           "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 4, 1 n.l"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        }
-      ],
-      "d3q_history": [
-        {
-          "turn": 1,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {
-            "food": "asian oriental"
-          },
-          "request_slots": {
-            "phone": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 1,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "centre"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "north"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "agent",
-          "diaact": "confirm_answer",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "phone": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "phone": "01223 356555"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "address": "169 high street chesterton chesterton"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "name": "saigon city"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 4, 1 n.l"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
           "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
@@ -3430,48 +3585,6 @@
         },
         {
           "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "asian oriental",
-            "area": "north",
-            "phone": "01223 356555",
-            "address": "169 high street chesterton chesterton",
-            "name": "saigon city",
-            "postcode": "c.b 4, 1 n.l",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 4, 1 n.l"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -3485,8 +3598,8 @@
       "seed": 424412,
       "k0_reward": -28.0,
       "k0_turns": 18,
-      "k5_reward": -25.0,
-      "k5_turns": 12,
+      "k5_reward": -29.0,
+      "k5_turns": 20,
       "goal": {
         "inform_slots": {
           "pricerange": "moderate",
@@ -3500,8 +3613,8 @@
       },
       "ddq_reward": -28.0,
       "ddq_turns": 18,
-      "d3q_reward": -25.0,
-      "d3q_turns": 12,
+      "d3q_reward": -29.0,
+      "d3q_turns": 20,
       "ddq_history": [
         {
           "turn": 1,
@@ -3560,7 +3673,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "21 - 24 northampton road"
+            "area": "west"
           },
           "request_slots": {},
           "nl": ""
@@ -3580,7 +3693,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "phone": "01799 521260"
+            "address": "21 - 24 northampton road"
           },
           "request_slots": {},
           "nl": ""
@@ -3588,13 +3701,51 @@
         {
           "turn": 5,
           "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01799 521260"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 5,
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "21 - 24 northampton road"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -3608,9 +3759,147 @@
           "nl": ""
         },
         {
-          "turn": 6,
+          "turn": 8,
           "speaker": "user",
           "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01799 521260"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "area": "west"
+          },
+          "request_slots": {
+            "address": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "moderate"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "21 - 24 northampton road"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01799 521260"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
@@ -3681,127 +3970,25 @@
         {
           "turn": 9,
           "speaker": "agent",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        }
-      ],
-      "d3q_history": [
-        {
-          "turn": 1,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {
-            "area": "west"
-          },
-          "request_slots": {
-            "address": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 1,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "address": "68 histon road chesterton"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "phone": "UNK"
+            "food": "UNK"
           },
           "nl": ""
         },
         {
-          "turn": 5,
-          "speaker": "agent",
+          "turn": 10,
+          "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
-            "area": "west",
-            "address": "68 histon road chesterton",
-            "taskcomplete": "Match Available"
+            "food": "I do not care"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 6,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
+          "turn": 10,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -3813,10 +4000,10 @@
     {
       "rank": 12,
       "seed": 424429,
-      "k0_reward": 34.0,
-      "k0_turns": 14,
-      "k5_reward": 32.0,
-      "k5_turns": 18,
+      "k0_reward": 33.0,
+      "k0_turns": 16,
+      "k5_reward": 34.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "gastropub",
@@ -3827,10 +4014,10 @@
           "phone": "UNK"
         }
       },
-      "ddq_reward": 34.0,
-      "ddq_turns": 14,
-      "d3q_reward": 32.0,
-      "d3q_turns": 18,
+      "ddq_reward": 33.0,
+      "ddq_turns": 16,
+      "d3q_reward": 34.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -3849,42 +4036,23 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "gastropub",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
             "area": "centre"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 3,
+          "turn": 2,
           "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "address": "UNK"
+            "phone": "UNK"
           },
           "nl": ""
         },
         {
-          "turn": 3,
+          "turn": 2,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -3894,13 +4062,33 @@
           "nl": ""
         },
         {
-          "turn": 4,
+          "turn": 3,
           "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
             "pricerange": "moderate"
           },
           "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "centre"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
           "nl": ""
         },
         {
@@ -3946,12 +4134,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "gastropub",
-            "taskcomplete": "Match Available",
-            "area": "centre",
-            "pricerange": "moderate",
-            "address": "corn exchange street",
-            "phone": "01223 308871"
+            "address": "corn exchange street"
           },
           "request_slots": {},
           "nl": ""
@@ -3966,6 +4149,29 @@
         },
         {
           "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "gastropub",
+            "area": "centre",
+            "pricerange": "moderate",
+            "address": "corn exchange street",
+            "phone": "01223 308871",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -4029,45 +4235,25 @@
         {
           "turn": 3,
           "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
-            "area": "centre"
+            "food": "gastropub"
           },
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 4,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "phone": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "phone": "01223 308871"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "address": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -4077,25 +4263,27 @@
           "nl": ""
         },
         {
-          "turn": 6,
+          "turn": 5,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "request",
           "inform_slots": {},
-          "request_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
           "nl": ""
         },
         {
-          "turn": 6,
+          "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "centre"
+            "phone": "01223 308871"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 7,
+          "turn": 6,
           "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
@@ -4103,22 +4291,22 @@
           "nl": ""
         },
         {
-          "turn": 7,
+          "turn": 6,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
             "food": "gastropub",
             "area": "centre",
             "pricerange": "moderate",
-            "phone": "01223 308871",
             "address": "corn exchange street",
+            "phone": "01223 308871",
             "taskcomplete": "Match Available"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 8,
+          "turn": 7,
           "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
@@ -4126,25 +4314,7 @@
           "nl": ""
         },
         {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "c.b 2, 3 q.f"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
+          "turn": 7,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -4156,10 +4326,10 @@
     {
       "rank": 13,
       "seed": 424446,
-      "k0_reward": -28.0,
-      "k0_turns": 18,
-      "k5_reward": -27.0,
-      "k5_turns": 16,
+      "k0_reward": -29.0,
+      "k0_turns": 20,
+      "k5_reward": -29.0,
+      "k5_turns": 20,
       "goal": {
         "inform_slots": {
           "food": "I do not care",
@@ -4170,11 +4340,211 @@
           "phone": "UNK"
         }
       },
-      "ddq_reward": -28.0,
-      "ddq_turns": 18,
-      "d3q_reward": -27.0,
-      "d3q_turns": 16,
+      "ddq_reward": -29.0,
+      "ddq_turns": 20,
+      "d3q_reward": -29.0,
+      "d3q_turns": 20,
       "ddq_history": [
+        {
+          "turn": 1,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {
+            "area": "south"
+          },
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 1,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "moderate"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "pricerange": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "moderate"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "g4 cambridge leisure park clifton way cherry hinton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 323737"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 6,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south",
+            "pricerange": "moderate",
+            "address": "g4 cambridge leisure park clifton way cherry hinton",
+            "phone": "01223 323737",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 7,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 323737"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 8,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south",
+            "pricerange": "moderate",
+            "address": "g4 cambridge leisure park clifton way cherry hinton",
+            "phone": "01223 323737",
+            "taskcomplete": "Match Available"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "user",
+          "diaact": "deny",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 9,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "phone": "01223 323737"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "user",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 10,
+          "speaker": "agent",
+          "diaact": "thanks",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        }
+      ],
+      "d3q_history": [
         {
           "turn": 1,
           "speaker": "user",
@@ -4210,11 +4580,11 @@
         {
           "turn": 2,
           "speaker": "agent",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "pricerange": "UNK"
+          "diaact": "inform",
+          "inform_slots": {
+            "pricerange": "expensive"
           },
+          "request_slots": {},
           "nl": ""
         },
         {
@@ -4230,6 +4600,26 @@
         {
           "turn": 3,
           "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
             "address": "g4 cambridge leisure park clifton way cherry hinton"
@@ -4238,7 +4628,7 @@
           "nl": ""
         },
         {
-          "turn": 4,
+          "turn": 5,
           "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
@@ -4248,7 +4638,7 @@
           "nl": ""
         },
         {
-          "turn": 4,
+          "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
@@ -4258,31 +4648,9 @@
           "nl": ""
         },
         {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "south",
-            "pricerange": "moderate",
-            "address": "g4 cambridge leisure park clifton way cherry hinton",
-            "phone": "01223 323737",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 6,
           "speaker": "user",
-          "diaact": "deny",
+          "diaact": "thanks",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
@@ -4353,167 +4721,25 @@
         {
           "turn": 9,
           "speaker": "agent",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        }
-      ],
-      "d3q_history": [
-        {
-          "turn": 1,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {
-            "area": "south"
-          },
-          "request_slots": {
-            "phone": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 1,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "chinese"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 2,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "chinese"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "chinese"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "address": "cambridge leisure park clifton way cherry hinton"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "pricerange": "moderate"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "south",
-            "food": "I do not care",
-            "address": "cambridge leisure park clifton way cherry hinton",
-            "pricerange": "moderate",
-            "taskcomplete": "NO VALUE MATCHES!!!"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 6,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "postcode": "NO VALUE MATCHES!!!"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "user",
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "phone": "UNK"
+            "food": "UNK"
           },
           "nl": ""
         },
         {
-          "turn": 7,
-          "speaker": "agent",
+          "turn": 10,
+          "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
-            "phone": "NO VALUE MATCHES!!!"
+            "food": "I do not care"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 8,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 8,
+          "turn": 10,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
@@ -4527,7 +4753,7 @@
       "seed": 424463,
       "k0_reward": 34.0,
       "k0_turns": 14,
-      "k5_reward": -26.0,
+      "k5_reward": 34.0,
       "k5_turns": 14,
       "goal": {
         "inform_slots": {
@@ -4541,7 +4767,7 @@
       },
       "ddq_reward": 34.0,
       "ddq_turns": 14,
-      "d3q_reward": -26.0,
+      "d3q_reward": 34.0,
       "d3q_turns": 14,
       "ddq_history": [
         {
@@ -4601,7 +4827,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "g4 cambridge leisure park clifton way cherry hinton"
+            "area": "south"
           },
           "request_slots": {},
           "nl": ""
@@ -4612,7 +4838,7 @@
           "diaact": "request",
           "inform_slots": {},
           "request_slots": {
-            "phone": "UNK"
+            "address": "UNK"
           },
           "nl": ""
         },
@@ -4621,7 +4847,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "phone": "01223 323737"
+            "address": "g4 cambridge leisure park clifton way cherry hinton"
           },
           "request_slots": {},
           "nl": ""
@@ -4629,9 +4855,11 @@
         {
           "turn": 5,
           "speaker": "user",
-          "diaact": "thanks",
+          "diaact": "request",
           "inform_slots": {},
-          "request_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
           "nl": ""
         },
         {
@@ -4639,11 +4867,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "south",
-            "pricerange": "moderate",
-            "address": "g4 cambridge leisure park clifton way cherry hinton",
-            "phone": "01223 323737",
-            "taskcomplete": "Match Available"
+            "phone": "01223 323737"
           },
           "request_slots": {},
           "nl": ""
@@ -4703,75 +4927,35 @@
         {
           "turn": 1,
           "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 2,
+          "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
-            "food": "chinese"
+            "food": "I do not care"
           },
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 2,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "address": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 2,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "chinese"
+            "pricerange": "expensive"
           },
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 3,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "address": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 3,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "address": "82 cherry hinton road cherry hinton"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "phone": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "phone": "01223 244149"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
           "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
@@ -4781,16 +4965,51 @@
           "nl": ""
         },
         {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "food": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "g4 cambridge leisure park clifton way cherry hinton"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "phone": "UNK"
+          },
+          "nl": ""
+        },
+        {
           "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "south",
-            "food": "chinese",
-            "address": "82 cherry hinton road cherry hinton",
-            "phone": "01223 244149",
-            "pricerange": "moderate",
-            "taskcomplete": "NO VALUE MATCHES!!!"
+            "phone": "01223 323737"
           },
           "request_slots": {},
           "nl": ""
@@ -4806,8 +5025,14 @@
         {
           "turn": 6,
           "speaker": "agent",
-          "diaact": "confirm_question",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south",
+            "pricerange": "moderate",
+            "address": "g4 cambridge leisure park clifton way cherry hinton",
+            "phone": "01223 323737",
+            "taskcomplete": "Match Available"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -4834,8 +5059,8 @@
       "seed": 424480,
       "k0_reward": -30.0,
       "k0_turns": 22,
-      "k5_reward": -29.0,
-      "k5_turns": 20,
+      "k5_reward": -26.0,
+      "k5_turns": 14,
       "goal": {
         "inform_slots": {
           "food": "portuguese",
@@ -4848,8 +5073,8 @@
       },
       "ddq_reward": -30.0,
       "ddq_turns": 22,
-      "d3q_reward": -29.0,
-      "d3q_turns": 20,
+      "d3q_reward": -26.0,
+      "d3q_turns": 14,
       "ddq_history": [
         {
           "turn": 1,
@@ -4886,15 +5111,53 @@
         {
           "turn": 2,
           "speaker": "agent",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "pricerange": "UNK"
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south"
           },
+          "request_slots": {},
           "nl": ""
         },
         {
           "turn": 3,
+          "speaker": "user",
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "I do not care"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 3,
+          "speaker": "agent",
+          "diaact": "confirm_answer",
+          "inform_slots": {},
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "user",
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "address": "UNK"
+          },
+          "nl": ""
+        },
+        {
+          "turn": 4,
+          "speaker": "agent",
+          "diaact": "inform",
+          "inform_slots": {
+            "address": "cambridge leisure park clifton way"
+          },
+          "request_slots": {},
+          "nl": ""
+        },
+        {
+          "turn": 5,
           "speaker": "user",
           "diaact": "inform",
           "inform_slots": {
@@ -4904,50 +5167,11 @@
           "nl": ""
         },
         {
-          "turn": 3,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "address": "cambridge leisure park clifton way"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 4,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "portuguese",
-            "pricerange": "cheap",
-            "address": "cambridge leisure park clifton way",
-            "taskcomplete": "Match Available"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 5,
-          "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
           "turn": 5,
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "cambridge leisure park clifton way"
+            "area": "south"
           },
           "request_slots": {},
           "nl": ""
@@ -4955,8 +5179,10 @@
         {
           "turn": 6,
           "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "I do not care"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -4965,10 +5191,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "portuguese",
-            "pricerange": "cheap",
-            "address": "cambridge leisure park clifton way",
-            "taskcomplete": "Match Available"
+            "phone": "01223 327908"
           },
           "request_slots": {},
           "nl": ""
@@ -4976,7 +5199,7 @@
         {
           "turn": 7,
           "speaker": "user",
-          "diaact": "deny",
+          "diaact": "thanks",
           "inform_slots": {},
           "request_slots": {},
           "nl": ""
@@ -4986,7 +5209,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "cambridge leisure park clifton way"
+            "area": "south"
           },
           "request_slots": {},
           "nl": ""
@@ -4994,8 +5217,10 @@
         {
           "turn": 8,
           "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "I do not care"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -5004,10 +5229,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "food": "portuguese",
-            "pricerange": "cheap",
-            "address": "cambridge leisure park clifton way",
-            "taskcomplete": "Match Available"
+            "area": "south"
           },
           "request_slots": {},
           "nl": ""
@@ -5015,8 +5237,10 @@
         {
           "turn": 9,
           "speaker": "user",
-          "diaact": "deny",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "I do not care"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -5043,24 +5267,30 @@
         {
           "turn": 10,
           "speaker": "agent",
-          "diaact": "confirm_answer",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south"
+          },
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 11,
           "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "I do not care"
+          },
           "request_slots": {},
           "nl": ""
         },
         {
           "turn": 11,
           "speaker": "agent",
-          "diaact": "thanks",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "south"
+          },
           "request_slots": {},
           "nl": ""
         }
@@ -5081,11 +5311,11 @@
         {
           "turn": 1,
           "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
-            "food": "indian"
+          "diaact": "request",
+          "inform_slots": {},
+          "request_slots": {
+            "food": "UNK"
           },
-          "request_slots": {},
           "nl": ""
         },
         {
@@ -5123,7 +5353,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "address": "cambridge leisure park clifton way"
+            "area": "south"
           },
           "request_slots": {},
           "nl": ""
@@ -5131,8 +5361,10 @@
         {
           "turn": 4,
           "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
+          "diaact": "inform",
+          "inform_slots": {
+            "area": "I do not care"
+          },
           "request_slots": {},
           "nl": ""
         },
@@ -5141,7 +5373,7 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "area": "south"
+            "address": "cambridge leisure park clifton way"
           },
           "request_slots": {},
           "nl": ""
@@ -5149,10 +5381,8 @@
         {
           "turn": 5,
           "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "I do not care"
-          },
+          "diaact": "thanks",
+          "inform_slots": {},
           "request_slots": {},
           "nl": ""
         },
@@ -5182,31 +5412,13 @@
           "speaker": "agent",
           "diaact": "inform",
           "inform_slots": {
-            "postcode": "c.b 1, 7 d.y"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "user",
-          "diaact": "thanks",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 7,
-          "speaker": "agent",
-          "diaact": "inform",
-          "inform_slots": {
             "phone": "01223 327908"
           },
           "request_slots": {},
           "nl": ""
         },
         {
-          "turn": 8,
+          "turn": 7,
           "speaker": "user",
           "diaact": "thanks",
           "inform_slots": {},
@@ -5214,43 +5426,7 @@
           "nl": ""
         },
         {
-          "turn": 8,
-          "speaker": "agent",
-          "diaact": "request",
-          "inform_slots": {},
-          "request_slots": {
-            "area": "UNK"
-          },
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {
-            "area": "I do not care"
-          },
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 9,
-          "speaker": "agent",
-          "diaact": "confirm_question",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 10,
-          "speaker": "user",
-          "diaact": "inform",
-          "inform_slots": {},
-          "request_slots": {},
-          "nl": ""
-        },
-        {
-          "turn": 10,
+          "turn": 7,
           "speaker": "agent",
           "diaact": "thanks",
           "inform_slots": {},
